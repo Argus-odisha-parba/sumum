@@ -18535,6 +18535,7 @@ body {
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   text-align: center;
+  cursor: pointer;
 }
 
 .doctor-card img {
@@ -18566,35 +18567,122 @@ body {
 }
 
 /* Modal Box */
+/* Modal Background */
+.doctor-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Card */
 .doctor-modal-content {
-  background: white;
-  width: 90%;
-  max-width: 420px;
-  margin: 5% auto;
-  padding: 25px;
-  border-radius: 10px;
-  text-align: center;
+  width: 92%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 16px;
+  margin: 6% auto;
+  overflow: hidden;
+  animation: modalFade 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
   position: relative;
-  animation: popup 0.3s ease;
 }
 
-@keyframes popup {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+@keyframes modalFade {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-.doctor-modal img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
+/* Close Button */
 .doctor-close {
   position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 24px;
+  right: 18px;
+  top: 14px;
+  font-size: 26px;
   cursor: pointer;
+}
+
+/* Header Layout */
+.doctor-modal-header {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  background: linear-gradient(135deg, #0d1b3f, #1e3a8a);
+  color: white;
+}
+
+.doctor-modal-header img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid white;
+}
+
+.doctor-role {
+  opacity: 0.9;
+}
+
+.doctor-badges span {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-right: 6px;
+  font-size: 13px;
+}
+
+/* Body */
+.doctor-modal-body {
+  padding: 25px;
+  text-align: center;
+}
+
+.doctor-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.doctor-stats div {
+  text-align: center;
+}
+
+.doctor-stats strong {
+  display: block;
+  color: #0d1b3f;
+}
+
+/* Button */
+.appointment-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0d1b3f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.appointment-btn:hover {
+  background: #1e3a8a;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .doctor-modal-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
