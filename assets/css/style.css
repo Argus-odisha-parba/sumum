@@ -5548,7 +5548,7 @@ textarea.form-control.is-invalid {
 .header-top-info-eight li {
   color: var(--white-color);
   font-family: var(--title-font);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 28px;
   display: -webkit-box;
@@ -18496,3 +18496,4 @@ body {
   .pillar-label { font-size: 0.8rem; }
   .center-circle { width: 120px; height: 120px; }
 }
+
