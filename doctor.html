@@ -1,375 +1,1218 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
-
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sum Ultimate | Best Hospitals in Bhubaneswar | Multi Speciality Hospital in Odisha</title>
-    <meta name="author" content="Vecuro">
-    <meta name="description" content="Medixi - Medical and Health Care HTML Template">
-    <meta name="keywords" content="Medixi - Medical and Health Care HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-
-    <!-- Mobile Specific Metas -->
+    <title>Ultimate Doctors | SUM Ultimate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--==============================
-	   Google Web Fonts
-	============================== -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-
-    <!-- Favicons - Place favicon.ico in the root directory -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
-
-    <!--==============================
-	    All CSS File
-	============================== -->
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
-    <!-- Fontawesome Icon -->
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <!-- Layerslider -->
     <link rel="stylesheet" href="assets/css/layerslider.min.css">
-    <!-- jQuery DatePicker -->
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
-    <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <!-- Slick Slider -->
     <link rel="stylesheet" href="assets/css/slick.min.css">
-    <!-- Animate CSS -->
     <link rel="stylesheet" href="assets/css/animate.min.css">
-    <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --sum-primary: #11325f;
+            --sum-primary-2: #1f4f91;
+            --sum-bg: #f5f8fc;
+            --sum-card: #ffffff;
+            --sum-border: rgba(17, 50, 95, 0.14);
+            --sum-text: #0f172a;
+            --sum-muted: #475569;
+            --sum-doc-subbar-top: 0px;
+        }
+        .doctor-page {
+            background: radial-gradient(circle at top right, #eaf2ff 0%, #f7fafe 38%, #f5f8fc 100%);
+        }
+        .doctor-hero {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(36px, 6vw, 56px) 0 clamp(32px, 5vw, 48px);
+            background: linear-gradient(145deg, #0f2749 0%, #11325f 42%, #1f4f91 100%);
+            color: #fff;
+        }
+        .doctor-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 100% 0%, rgba(120, 180, 255, 0.25) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 40% at 0% 100%, rgba(80, 140, 220, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .doctor-hero .container-style8 {
+            position: relative;
+            z-index: 1;
+            padding-left: max(15px, env(safe-area-inset-left));
+            padding-right: max(15px, env(safe-area-inset-right));
+        }
+        .doctor-hero h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: clamp(1.75rem, 4vw, 2.35rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .doctor-hero p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: 560px;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            line-height: 1.55;
+        }
+        .doctor-hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .doctor-hero-stats[hidden] {
+            display: none !important;
+        }
+        .doctor-hero-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 120px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        .doctor-hero-stat .num {
+            font-size: clamp(1.5rem, 3vw, 1.85rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .doctor-hero-stat .lbl {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.88;
+            margin-top: 4px;
+        }
+        .doctor-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 0.03em;
+        }
+        .doctor-shell {
+            margin-top: clamp(12px, 3vw, 24px);
+            padding-bottom: clamp(48px, 8vw, 80px);
+            scroll-margin-top: 100px;
+        }
+        .doctor-shell .container-style8 {
+            padding-left: max(15px, env(safe-area-inset-left));
+            padding-right: max(15px, env(safe-area-inset-right));
+        }
+        .doctor-panel {
+            border: 1px solid var(--sum-border);
+            border-radius: clamp(14px, 2vw, 20px);
+            background: var(--sum-card);
+            box-shadow: 0 24px 56px rgba(2, 12, 27, 0.1);
+            overflow: hidden;
+        }
+        .doctor-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+        .doctor-label {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--sum-primary);
+            letter-spacing: 0.01em;
+        }
+        .doctor-hint {
+            margin: 0;
+            font-size: 0.8125rem;
+            color: var(--sum-muted);
+            line-height: 1.4;
+        }
+        .doctor-search-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .doctor-search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1rem;
+            pointer-events: none;
+        }
+        .doctor-search {
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid rgba(17, 50, 95, 0.22);
+            border-radius: 12px;
+            padding: 12px 14px 12px 44px;
+            outline: none;
+            color: var(--sum-text);
+            font-size: 1rem;
+            line-height: 1.4;
+            background: #fff;
+        }
+        .doctor-search::placeholder {
+            color: #94a3b8;
+        }
+        .doctor-search:focus {
+            border-color: var(--sum-primary-2);
+            box-shadow: 0 0 0 3px rgba(31, 79, 145, 0.18);
+        }
+        .doctor-select {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 40px 12px 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--sum-text);
+            border: 1px solid rgba(17, 50, 95, 0.22);
+            border-radius: 12px;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2311325f' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            appearance: none;
+            cursor: pointer;
+        }
+        .doctor-select:focus {
+            border-color: var(--sum-primary-2);
+            box-shadow: 0 0 0 3px rgba(31, 79, 145, 0.18);
+            outline: none;
+        }
+        .status-row {
+            padding: clamp(12px, 2.5vw, 14px) clamp(14px, 3vw, 22px);
+            background: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+            font-size: clamp(0.875rem, 2.2vw, 0.9375rem);
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(17, 50, 95, 0.08);
+        }
+        .status-row a {
+            color: #1a5aad;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .doctor-result-summary {
+            padding: 12px clamp(14px, 3vw, 22px) 0;
+            font-size: clamp(0.875rem, 2.2vw, 0.9375rem);
+            font-weight: 600;
+            color: var(--sum-text);
+            border-bottom: 1px solid rgba(17, 50, 95, 0.06);
+        }
+        .doctor-result-summary[hidden] {
+            display: none !important;
+        }
+        .doctor-results {
+            padding: clamp(14px, 3vw, 20px) clamp(12px, 3vw, 20px) clamp(20px, 4vw, 28px);
+            background: linear-gradient(180deg, #fcfdff 0%, #f6f9ff 100%);
+        }
+        .dept-block {
+            margin-bottom: 32px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--sum-border);
+            box-shadow: 0 12px 34px rgba(17, 50, 95, 0.08);
+        }
+        .dept-title {
+            margin: 0;
+            padding: clamp(14px, 3vw, 18px) clamp(14px, 3vw, 22px);
+            background: linear-gradient(105deg, #0e2a52 0%, #11325f 45%, #1a5aad 100%);
+            color: #fff;
+            font-size: clamp(1rem, 2.8vw, 1.12rem);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .dept-title__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+        .dept-title__text {
+            min-width: 0;
+            word-break: break-word;
+        }
+        .dept-title__badge {
+            flex-shrink: 0;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        @media (max-width: 480px) {
+            .dept-title__inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        .dept-title::before {
+            content: "";
+            width: 4px;
+            height: 22px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, #7cb4ff, #4a8fff);
+            flex-shrink: 0;
+        }
+        .doctor-profile-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(12px, 1.8vw, 16px);
+            padding: clamp(12px, 2vw, 16px) clamp(10px, 2vw, 14px) clamp(14px, 3vw, 18px);
+            background:
+                radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.9) 0%, transparent 55%),
+                linear-gradient(165deg, #fbfdff 0%, #eef4fc 52%, #e4edf8 100%);
+        }
+        @media (max-width: 991px) {
+            .doctor-profile-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 575px) {
+            .doctor-profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .doctor-profile-card {
+            position: relative;
+            border-radius: 16px;
+            background: var(--sum-card);
+            border: 1px solid rgba(17, 50, 95, 0.09);
+            box-shadow:
+                0 4px 6px rgba(15, 39, 73, 0.04),
+                0 12px 32px rgba(15, 39, 73, 0.07);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+        .doctor-profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #11325f, #2b6fd4, #4a9fff);
+            opacity: 0.95;
+        }
+        .doctor-profile-card:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 8px 16px rgba(15, 39, 73, 0.06),
+                0 20px 48px rgba(17, 50, 95, 0.12);
+            border-color: rgba(31, 79, 145, 0.2);
+        }
+        .doctor-profile-card:hover .doctor-profile-avatar {
+            transform: scale(1.02);
+        }
+        .doctor-profile-card__inner {
+            display: flex;
+            gap: 18px;
+            padding: 22px 20px 22px;
+            align-items: flex-start;
+        }
+        /* Three-up grid: centered tile cards */
+        .doctor-profile-grid .doctor-profile-card__inner {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: clamp(14px, 2vw, 18px) clamp(10px, 1.6vw, 13px) clamp(12px, 2vw, 14px);
+            gap: 10px;
+            min-height: 100%;
+        }
+        .doctor-profile-grid .doctor-profile-card__body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: stretch;
+        }
+        .doctor-profile-grid .doctor-profile-dept {
+            align-self: center;
+        }
+        .doctor-profile-grid .doctor-profile-name {
+            margin: 0 0 8px;
+            font-size: clamp(0.88rem, 1.6vw, 0.96rem);
+        }
+        .doctor-profile-grid .doctor-profile-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .doctor-profile-grid .doctor-profile-name a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .doctor-profile-grid .doctor-profile-tags {
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .doctor-profile-grid .doctor-profile-tag {
+            font-size: 0.72rem;
+            padding: 6px 8px;
+        }
+        .doctor-profile-grid .doctor-profile-bio {
+            font-size: 0.78rem;
+            line-height: 1.48;
+            max-width: none;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+        .doctor-profile-readfull-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            color: var(--sum-primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .doctor-profile-readfull-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .doctor-profile-grid .doctor-profile-expand {
+            text-align: left;
+        }
+        .doctor-profile-grid .doctor-profile-actions {
+            margin-top: auto;
+            padding-top: 2px;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .doctor-profile-grid .doctor-profile-actions a {
+            width: 100%;
+            justify-content: center;
+            min-height: 34px;
+            padding: 7px 9px;
+            font-size: 0.76rem;
+            border-radius: 10px;
+        }
+        .doctor-profile-avatar {
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background: linear-gradient(145deg, #11325f 0%, #1f4f91 55%, #3d7fd4 100%);
+            box-shadow: 0 10px 24px rgba(17, 50, 95, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: transform 0.25s ease;
+        }
+        .doctor-profile-grid .doctor-profile-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            font-size: 0.88rem;
+        }
+        .doctor-profile-card__body {
+            min-width: 0;
+            flex: 1;
+        }
+        .doctor-profile-name {
+            margin: 0 0 12px;
+            color: var(--sum-primary);
+            font-size: 1.125rem;
+            font-weight: 800;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+        .doctor-profile-timing {
+            margin: 0 0 12px;
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 0.79rem;
+            font-weight: 700;
+            line-height: 1.45;
+            color: #1b3b68;
+            background: #eef4ff;
+            border: 1px solid rgba(31, 79, 145, 0.18);
+            text-align: left;
+        }
+        .doctor-profile-timing i {
+            margin-top: 1px;
+            color: #1f4f91;
+        }
+        .doctor-profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .doctor-profile-tag {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.45;
+            color: #1e293b;
+            background: #f1f5f9;
+            border: 1px solid rgba(17, 50, 95, 0.1);
+        }
+        .doctor-profile-tag i {
+            font-size: 0.72rem;
+            opacity: 0.85;
+            color: var(--sum-primary-2);
+        }
+        .doctor-profile-bio {
+            margin: 0;
+            color: #334155;
+            line-height: 1.7;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            max-width: 65ch;
+        }
+        .empty-box {
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid rgba(17, 50, 95, 0.12);
+            border-radius: 16px;
+            color: #475569;
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+        .empty-box strong {
+            display: block;
+            color: var(--sum-primary);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .doctor-profile-card {
+                transition: none;
+            }
+            .doctor-profile-card:hover {
+                transform: none;
+            }
+        }
+        @media (max-width: 1199px) and (min-width: 768px) {
+            .sum-doctor-subbar__inner {
+                grid-template-columns: 1fr 1fr;
+                -webkit-box-align: end;
+                    -ms-flex-align: end;
+                        align-items: end;
+            }
+        }
+        @media (max-width: 767px) {
+            .sum-doctor-subbar__inner {
+                grid-template-columns: 1fr;
+                -webkit-box-align: stretch;
+                    -ms-flex-align: stretch;
+                        align-items: stretch;
+            }
+        }
+        @media (max-width: 575px) {
+            .doctor-profile-grid .doctor-profile-bio {
+                -webkit-line-clamp: 8;
+            }
+        }
 
+        /* Doctor sub-header: department (left) + compact search — sticky below fixed header */
+        .sum-doctor-subbar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: var(--sum-doc-subbar-top, 0px);
+            z-index: 920;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-bottom: 1px solid rgba(17, 50, 95, 0.1);
+            box-shadow: 0 8px 24px rgba(15, 39, 73, 0.06);
+            padding: clamp(10px, 2.5vw, 16px) 0 clamp(12px, 2.5vw, 18px);
+        }
+        .sum-doctor-subbar .container-style8 {
+            padding-left: max(15px, env(safe-area-inset-left));
+            padding-right: max(15px, env(safe-area-inset-right));
+            overflow: visible;
+        }
+        .sum-doctor-subbar__inner {
+            display: grid;
+            grid-template-columns: minmax(180px, min(34vw, 300px)) minmax(0, 1fr);
+            gap: clamp(10px, 2vw, 16px) clamp(12px, 2vw, 18px);
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: end;
+        }
+        .sum-doctor-subbar .doctor-search {
+            min-height: 40px;
+            padding: 8px 11px 8px 34px;
+            font-size: 0.875rem;
+            border-radius: 10px;
+        }
+        .sum-doctor-subbar .doctor-search-icon {
+            left: 11px;
+            font-size: 0.875rem;
+        }
+        .sum-doctor-subbar__hint {
+            font-size: 0.75rem;
+            line-height: 1.35;
+            max-width: 42ch;
+        }
+        .sum-doctor-subbar .sum-doctor-subbar__label {
+            font-size: 0.8125rem;
+            margin-bottom: 4px;
+        }
+        .sum-doctor-subbar__label {
+            margin-bottom: 6px;
+        }
+        .sum-doctor-subbar__hint {
+            margin-top: 6px;
+            margin-bottom: 0;
+        }
+        .sum-doctor-subbar__dept-wrap {
+            position: relative;
+        }
+        /* Bridge hover gap between trigger and mega panel */
+        .sum-dept-subbar-wrap::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 16px;
+            top: 100%;
+            z-index: 99;
+        }
+        .sum-doctor-subbar__dept-trigger {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+            min-height: 40px;
+            min-width: 0;
+            padding: 8px 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--sum-text);
+            text-align: left;
+            cursor: pointer;
+            border: 1px solid rgba(17, 50, 95, 0.22);
+            border-radius: 12px;
+            background: #fff;
+            -webkit-transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .sum-doctor-subbar__dept-trigger:hover {
+            border-color: rgba(31, 79, 145, 0.35);
+        }
+        .sum-dept-subbar-wrap:hover .sum-doctor-subbar__dept-trigger,
+        .sum-dept-subbar-wrap.sum-dept-subbar-wrap--open .sum-doctor-subbar__dept-trigger,
+        .sum-dept-subbar-wrap:focus-within .sum-doctor-subbar__dept-trigger {
+            border-color: var(--sum-primary-2);
+            box-shadow: 0 0 0 3px rgba(31, 79, 145, 0.15);
+        }
+        .sum-doctor-subbar__dept-trigger #deptTriggerLabel {
+            -webkit-box-flex: 1;
+                -ms-flex: 1 1 auto;
+                    flex: 1 1 auto;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: left;
+        }
+        .sum-doctor-subbar__chev {
+            font-size: 0.75rem;
+            color: #64748b;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+            -webkit-transition: -webkit-transform 0.2s ease;
+            transition: -webkit-transform 0.2s ease;
+            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+        }
+        .sum-dept-subbar-wrap:hover .sum-doctor-subbar__chev,
+        .sum-dept-subbar-wrap.sum-dept-subbar-wrap--open .sum-doctor-subbar__chev {
+            -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+        }
+        .sum-dept-select-sync {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Department mega-menu — 4 columns, anchored under sub-header trigger */
+        .doctor-page .sum-dept-subbar-wrap .sum-dept-mega-panel--subbar {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: auto;
+            padding-left: 0;
+            width: min(calc(100vw - max(24px, env(safe-area-inset-left) + env(safe-area-inset-right))), 1180px);
+            min-width: 0;
+            max-width: min(1180px, calc(100vw - 16px));
+            max-height: min(78vh, 640px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: clamp(14px, 2.5vw, 22px) clamp(12px, 2.5vw, 26px) clamp(16px, 3vw, 26px) !important;
+            display: none;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 18px);
+            border-radius: 16px;
+            box-shadow: 0 24px 56px rgba(15, 39, 73, 0.16);
+            border: 1px solid rgba(17, 50, 95, 0.08);
+            background: #fff;
+            z-index: 100;
+            list-style: none;
+            margin: 0;
+            -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+        .doctor-page .sum-dept-subbar-wrap:hover .sum-dept-mega-panel--subbar,
+        .doctor-page .sum-dept-subbar-wrap.sum-dept-subbar-wrap--open .sum-dept-mega-panel--subbar,
+        .doctor-page .sum-dept-subbar-wrap:focus-within .sum-dept-mega-panel--subbar {
+            display: grid;
+        }
+        .doctor-page .sum-dept-subbar-wrap.sum-dept-subbar-wrap--suspend-hover:hover .sum-dept-mega-panel--subbar {
+            display: none;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar::before {
+            display: none !important;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0 !important;
+            border: 0;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li.sum-dept-row--all {
+            grid-column: 1 / -1;
+            margin-bottom: 4px;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 12px 12px 10px !important;
+            padding-left: 10px !important;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #334155 !important;
+            line-height: 1.35;
+            text-align: left;
+            text-decoration: none !important;
+            border: 1px solid transparent;
+            -webkit-transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+            transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row::before {
+            display: none !important;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__main {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            gap: 12px;
+            min-width: 0;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__icon.sum-dept-row__icon--lavender {
+            color: #7c6fd6;
+            background: rgba(124, 111, 214, 0.14);
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__icon.sum-dept-row__icon--teal {
+            color: #0d9488;
+            background: rgba(13, 148, 136, 0.14);
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__label {
+            white-space: normal;
+            word-break: break-word;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            min-width: 0;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__count {
+            flex-shrink: 0;
+            font-variant-numeric: tabular-nums;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 5px 10px;
+            border-radius: 999px;
+            color: #0f2749;
+            background: linear-gradient(180deg, #f0f6ff 0%, #e2ebfa 100%);
+            border: 1px solid rgba(17, 50, 95, 0.12);
+            box-shadow: 0 1px 2px rgba(17, 50, 95, 0.05);
+            line-height: 1.2;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li.sum-dept-row--all .sum-dept-row__count {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, #eef4ff 100%);
+            border-color: rgba(31, 79, 145, 0.18);
+            color: #11325f;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row:hover .sum-dept-row__count {
+            border-color: rgba(31, 79, 145, 0.22);
+            background: linear-gradient(180deg, #fff 0%, #e8f1ff 100%);
+        }
+        .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__chev {
+            color: #94a3b8;
+            font-size: 0.72rem;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+            opacity: 0.85;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row:hover {
+            background: #f1f5f9;
+            border-color: rgba(17, 50, 95, 0.08);
+            color: #0f2749 !important;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row:hover .sum-dept-row__chev {
+            color: #64748b;
+        }
+        .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-pick.is-active {
+            background: rgba(31, 79, 145, 0.1);
+            border-color: rgba(31, 79, 145, 0.2);
+            color: #11325f !important;
+        }
+        @media (max-width: 1199px) {
+            .doctor-page .sum-dept-subbar-wrap .sum-dept-mega-panel--subbar {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                width: min(calc(100vw - 24px), 980px);
+            }
+        }
+        @media (max-width: 991px) {
+            .doctor-page .sum-dept-subbar-wrap .sum-dept-mega-panel--subbar {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                left: 0;
+                -webkit-transform: none;
+                        transform: none;
+                width: min(calc(100vw - 20px), 720px);
+            }
+        }
+        @media (max-width: 767px) {
+            .doctor-page .sum-dept-subbar-wrap .sum-dept-mega-panel--subbar {
+                grid-template-columns: 1fr;
+                left: 0;
+                -webkit-transform: none;
+                        transform: none;
+                min-width: 0 !important;
+                width: calc(100vw - max(20px, env(safe-area-inset-left) + env(safe-area-inset-right)));
+                max-width: 100%;
+                padding: 14px 12px 16px !important;
+                max-height: min(70vh, 520px);
+                border-radius: 12px;
+            }
+            .doctor-page .sum-dept-mega-panel--subbar > li > a.sum-dept-row {
+                min-height: 48px;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+                font-size: 0.875rem;
+            }
+            .doctor-page .sum-dept-mega-panel--subbar .sum-dept-row__icon {
+                width: 34px;
+                height: 34px;
+                font-size: 0.82rem;
+            }
+        }
+        .doctor-page .sum-dept-loading,
+        .doctor-page .sum-dept-error {
+            display: block;
+            padding: 10px 16px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .doctor-page .sum-dept-error {
+            color: #b45309;
+        }
+
+        /* Doctor profile card v2 */
+        .doctor-profile-dept {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0 0 10px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #1f4f91;
+            background: rgba(31, 79, 145, 0.1);
+            border: 1px solid rgba(31, 79, 145, 0.15);
+        }
+        .doctor-profile-dept i {
+            font-size: 0.7rem;
+            opacity: 0.9;
+        }
+        .doctor-profile-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(17, 50, 95, 0.08);
+        }
+        .doctor-profile-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .doctor-profile-actions .doctor-profile-book {
+            background: linear-gradient(135deg, #11325f, #1f4f91);
+            color: #fff !important;
+            box-shadow: 0 8px 20px rgba(17, 50, 95, 0.25);
+        }
+        .doctor-profile-actions .doctor-profile-book:hover {
+            color: #fff !important;
+            transform: translateY(-1px);
+        }
+        .doctor-profile-actions .doctor-profile-outline {
+            border: 1px solid rgba(17, 50, 95, 0.25);
+            color: var(--sum-primary) !important;
+            background: #fff;
+        }
+        .doctor-profile-actions .doctor-profile-outline:hover {
+            background: #f0f6ff;
+        }
+        .doctor-profile-expand {
+            margin-top: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(17, 50, 95, 0.12);
+            background: #f8fafc;
+            overflow: hidden;
+        }
+        .doctor-profile-expand summary {
+            padding: 10px 14px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--sum-primary);
+            cursor: pointer;
+            list-style: none;
+        }
+        .doctor-profile-expand summary::-webkit-details-marker {
+            display: none;
+        }
+        .doctor-profile-expand summary::after {
+            content: "";
+            float: right;
+            width: 8px;
+            height: 8px;
+            margin-top: 5px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            opacity: 0.7;
+        }
+        .doctor-profile-expand[open] summary::after {
+            transform: rotate(-135deg);
+            margin-top: 8px;
+        }
+        .doctor-profile-expand .doctor-profile-expand__body {
+            padding: 0 14px 14px;
+            color: #334155;
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            white-space: pre-wrap;
+        }
+        @media (max-width: 575px) {
+            .doctor-hero-stats {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: stretch;
+                    -ms-flex-align: stretch;
+                        align-items: stretch;
+            }
+            .doctor-hero-stat {
+                width: 100%;
+            }
+            .doctor-profile-actions {
+                justify-content: center;
+            }
+            .doctor-profile-actions a {
+                flex: 1 1 auto;
+                min-width: min(100%, 140px);
+                min-height: 46px;
+            }
+        }
+        @media (max-width: 991px) {
+            .doctor-hero {
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+            .doctor-hero h1 {
+                font-size: clamp(1.45rem, 6vw, 1.95rem);
+            }
+            .doctor-hero p {
+                max-width: 100%;
+                font-size: 0.92rem;
+            }
+            .sum-doctor-subbar {
+                padding-top: 10px;
+                padding-bottom: 12px;
+            }
+            .sum-doctor-subbar__inner {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                align-items: stretch;
+            }
+            .sum-doctor-subbar__dept-wrap {
+                width: 100%;
+            }
+            .sum-doctor-subbar__dept-trigger {
+                width: 100%;
+                min-height: 42px;
+            }
+            .sum-doctor-subbar .doctor-search {
+                min-height: 42px;
+                font-size: 0.86rem;
+            }
+            .doctor-results {
+                padding: 12px 10px 16px;
+            }
+            .dept-block {
+                margin-bottom: 18px;
+                border-radius: 16px;
+            }
+            .dept-title {
+                padding: 12px 14px;
+            }
+            .doctor-profile-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                padding: 10px;
+            }
+            .doctor-profile-grid .doctor-profile-card__inner {
+                padding: 12px 10px;
+                gap: 8px;
+            }
+            .doctor-profile-grid .doctor-profile-avatar {
+                width: 54px;
+                height: 54px;
+                font-size: 0.86rem;
+            }
+            .doctor-profile-grid .doctor-profile-name {
+                font-size: 0.9rem;
+            }
+            .doctor-profile-grid .doctor-profile-bio {
+                font-size: 0.78rem;
+                -webkit-line-clamp: 3;
+            }
+            .doctor-profile-grid .doctor-profile-actions a {
+                min-height: 34px;
+                font-size: 0.74rem;
+                padding: 7px 8px;
+            }
+        }
+        @media (max-width: 640px) {
+            .doctor-profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .doctor-shell {
+                scroll-margin-top: 74px;
+            }
+            .sum-doctor-subbar {
+                position: static;
+            }
+            .doctor-page .sum-dept-subbar-wrap .sum-dept-mega-panel--subbar {
+                width: 100%;
+                max-height: 62vh;
+            }
+        }
+    </style>
 </head>
-
-<body class="">
-
-
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-
-
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
-
-
-
-
-    <!--==============================
-     Preloader
-  ==============================-->
-    <div class="preloader  ">
+<body class="doctor-page">
+    <div class="preloader">
         <button class="vs-btn preloaderCls">Cancel Preloader </button>
         <div class="preloader-inner">
             <svg width="88px" height="108px" viewBox="0 0 54 64">
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5" id="Path-2" stroke-width="2"></path>
+                <g stroke="none" fill="none">
+                    <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5" stroke-width="2"></path>
                 </g>
             </svg>
         </div>
     </div>
-    <!--==============================
-    Mobile Menu
-  ============================== -->
-    <!-- <div class="vs-menu-wrapper">
+
+    <div class="vs-menu-wrapper">
         <div class="vs-menu-area text-center">
-            <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+            <button class="vs-menu-toggle" type="button" aria-label="Close menu"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/logo-mobile.svg" alt="Medixi"></a>
+                <a href="index.html"><img src="assets/img/logo-mobile.svg" alt="SUM Ultimate Medicare"></a>
             </div>
-            <form action="#" class="mobile-menu-form">
-                <input type="text" class="form-control" placeholder="Search...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
             <div class="vs-mobile-menu">
                 <ul>
-                    <li class="menu-item-has-children">
-                        <a href="index.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home One</a></li>
-                            <li><a href="index-2.html">Home Two</a></li>
-                            <li><a href="index-3.html">Home Three</a></li>
-                            <li><a href="index-4.html">Home Four </a></li>
-                            <li><a href="index-5.html">Home Five</a></li>
-                            <li><a href="index-6.html">Home Six <span class="new-label">New</span></a></li>
-                            <li><a href="index-7.html">Home Seven <span class="new-label">New</span></a></li>
-                            <li><a href="index-8.html">Home Eight <span class="new-label">New</span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="service.html">Services</a>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Services Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="blog.html">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="shop.html">Our Shop <span class="new-label">New</span></a></li>
-                            <li><a href="shop-details.html">Shop Details <span class="new-label">New</span></a></li>
-                            <li><a href="cart.html">Shopping Cart <span class="new-label">New</span></a></li>
-                            <li><a href="checkout.html">Checkout <span class="new-label">New</span></a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="project.html">Projects</a></li>
-                            <li><a href="appointment.html">Appointment</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact Us</a>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="doctor.html">Specialist &amp; Consultant</a></li>
+                    <li><a href="https://sumum.soahospitals.com/ultimate-gallery/" target="_blank" rel="noopener">Gallery</a></li>
+                    <li><a href="https://sumum.soahospitals.com/awards_accreditions/nabh-within-365-days/" target="_blank" rel="noopener">Awards and Accolades</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://appt.soahospitals.com/" target="_blank" rel="noopener">Login &amp; Register / Book</a></li>
                 </ul>
             </div>
         </div>
-    </div> -->
-    <!--==============================
-    Sidemenu
-============================== -->
-    <div class="sidemenu-wrapper d-none d-lg-block  ">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget footer-widget  ">
-                <div class="vs-widget-about">
-                    <div class="footer-logo">
-                        <img src="assets/img/logo.svg" alt="logo">
-                    </div>
-                    <p class="footer-text1">Lorem ipsum dolor sit amet, consectet eiusmod tempor incididunt ut labore e rem ipsum dolor sit amet. sum dolor sit amet, consectet eiusmod.</p>
-                    <div class="footer-social3">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-google"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="widget footer-widget   ">
-                <h3 class="widget_title">Visiting Hours</h3>
-                <div class="footer-table">
-                    <table>
-                        <tr>
-                            <td>Mon - Fri:</td>
-                            <td>8:00 am - 8:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday:</td>
-                            <td>9:00 am - 6:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday:</td>
-                            <td>9:00 am - 6:00 pm</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="address-line">
-                    <i class="far fa-map-marker-alt text-theme fs-md"></i>
-                    <a href="#" class="text-reset fs-md">374 William S Canning Blvd, Fall River MA 2721</a>
-                </div>
-            </div>
-            <div class="widget footer-widget  ">
-                <h4 class="widget_title">Gallery Posts</h4>
-                <div class="footer-gallery">
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-1.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-2.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-3.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-4.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-5.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
-                    <div class="gal-item">
-                        <a href="#"><img src="assets/img/widget/gal-1-6.jpg" alt="Gallery Image" class="w-100"></a>
-                    </div>
+    </div>
+
+    <header class="header-wrapper header-layout8 sum-header-v8">
+        <div class="sum-mobile-header-bar d-lg-none">
+            <div class="container-style8">
+                <div class="sum-mobile-header-inner">
+                    <a href="tel:+916743500500" class="sum-mobile-header-call"><i class="fas fa-phone" aria-hidden="true"></i><span>+91 0674 3 500 500</span></a>
+                    <a href="https://appt.soahospitals.com/" class="sum-mobile-header-appt" target="_blank" rel="noopener">Book Appointment</a>
                 </div>
             </div>
         </div>
-    </div>
-    <!--==============================
-    Popup Search Box
-    ============================== -->
-    <div class="popup-search-box d-none d-lg-block  ">
-        <button class="searchClose border-theme text-theme"><i class="fal fa-times"></i></button>
-        <form action="#">
-            <input type="text" class="border-theme" placeholder="What are you looking for">
-            <button type="submit"><i class="fal fa-search"></i></button>
-        </form>
-    </div>
-    <!--==============================
-        Header Area
-    ==============================-->
-    <header class="header-wrapper header-layout2">
-        <!-- Header Top -->
-        <div class="header-top bg-title py-2 d-none d-md-block">
-            <div class="container py-1">
-                <div class="row justify-content-center justify-content-xl-between">
-                    <div class="col-auto">
-                        <ul class="header-top-info list-unstyled m-0">
-                            <li><i class="far fa-map-marker-alt"></i>36D Street Brooklyn, New York</li>
-                            <li><i class="far fa-clock"></i>Mon - Fri: 8:00 am - 7:00 pm</li>
-                        </ul>
+        <div class="header-top-eight d-none d-lg-block sum-header-topbar sum-ref-topbar">
+            <div class="container-style8">
+                <div class="row align-items-center sum-ref-topbar-row">
+                    <div class="col-lg-auto sum-ref-topbar-login">
+                        <a href="https://appt.soahospitals.com/" class="sum-ref-login-link" target="_blank" rel="noopener"><i class="fas fa-user" aria-hidden="true"></i> Login &amp; Register</a>
                     </div>
-                    <div class="col-auto d-none d-xl-block">
-                        <ul class="head-top-links text-end">
-                            <li>
-                                <ul class="header-social">
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <!-- Dropdown -->
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fal fa-globe"></i> English
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                    <li><a href="#">German</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">Italian</a></li>
-                                    <li><a href="#">Latvian</a></li>
-                                    <li><a href="#">Spanish</a></li>
-                                    <li><a href="#">Greek</a></li>
-                                </ul>
-                            </li>
+                    <div class="col-lg">
+                        <div class="sum-ref-topbar-center">
+                            <span class="sum-ref-meta"><i class="far fa-clock" aria-hidden="true"></i> Monday - Sunday 08:00 — 18:00</span>
+                            <span class="sum-ref-meta sum-ref-meta-address"><i class="far fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/Eub6yxPCTxFu5UZx7" target="_blank" rel="noopener">K-8, KALINGA NAGAR, GHATIKIA, BHUBANESWAR, 751003, ODISHA</a></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <ul class="header-social-eight sum-ref-social-top mb-0 list-unstyled d-flex">
+                            <li><a href="https://www.facebook.com/soa.sumum" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/SUM_Ultimate" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/sum_ultimate_medicare/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Sticky Active -->
         <div class="sticky-wrap">
             <div class="sticky-active">
-                <!-- Header Main -->
-                <div class="header-main py-3 py-lg-0">
-                    <div class="container position-relative">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-auto d-flex">
-                                <div class="header2-logo">
-                                    <a href="index.html"><img src="assets/img/logo.png" style="width:116px" alt="Logo"></a>
+                <div class="header-main-eight">
+                    <div class="container-style8 position-relative">
+                        <div class="row align-items-center justify-content-between sum-header-main-row">
+                            <div class="col-auto">
+                                <div class="header8-logo">
+                                    <a href="index.html"><img class="sum-header-logo-img" src="assets/img/logo.png" width="116" height="72" alt="SUM Ultimate Medicare"></a>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <nav class="main-menu menu-style2 d-none d-lg-block">
+                            <div class="col sum-header-nav-col">
+                                <nav class="main-menu menu-style8 d-none d-lg-block sum-ref-main-nav" aria-label="Primary">
                                     <ul>
-                                        <li>
-                                            <a href="index.html"><span class="has-new-label">Home <span class="new-label">New</span></span></a>
-                                            
-                                        </li>
-                                        <li>
-                                            <a href="#">Specialist & Consultant</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Awards and Accolades</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Blog</a>
-                                        </li>
-                                        <!-- <li class="menu-item-has-children">
-                                            <a href="service.html">Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="blog.html">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children mega-menu-wrap">
-                                            <a href="#"><span class="has-new-label">Pages <span class="new-label">New</span></span></a>
-                                            <ul class="mega-menu">
-                                                <li><a href="shop.html">Pagelist 1</a>
-                                                    <ul>
-                                                        <li><a href="index.html">Home One</a></li>
-                                                        <li><a href="index-2.html">Home Two</a></li>
-                                                        <li><a href="index-3.html">Home Three</a></li>
-                                                        <li><a href="index-4.html">Home Four </a></li>
-                                                        <li><a href="index-5.html">Home Five </a></li>
-                                                        <li><a href="index-6.html">Home Six <span class="new-label">New</span></a></li>
-                                                        <li><a href="index-7.html">Home Seven <span class="new-label">New</span></a></li>
-                                                        <li><a href="index-8.html">Home Eight <span class="new-label">New</span></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pagelist 2</a>
-                                                    <ul>
-                                                        <li><a href="about.html">About Us</a></li>
-                                                        <li><a href="service.html">Services</a></li>
-                                                        <li><a href="service-details.html">Services Details</a></li>
-                                                        <li><a href="team.html">Team</a></li>
-                                                        <li><a href="team-details.html">Team Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pagelist 3</a>
-                                                    <ul>
-                                                        <li><a href="project.html">Projects</a></li>
-                                                        <li><a href="shop.html">Our Shop <span class="new-label">New</span></a></li>
-                                                        <li><a href="shop-details.html">Shop Details <span class="new-label">New</span></a></li>
-                                                        <li><a href="cart.html">Shopping Cart <span class="new-label">New</span></a></li>
-                                                        <li><a href="checkout.html">Checkout <span class="new-label">New</span></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pagelist 4</a>
-                                                    <ul>
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                        <li><a href="appointment.html">Appointment</a></li>
-                                                        <li><a href="contact.html">Contact Us</a></li>
-                                                        <li><a href="error.html">Error Page</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li> -->
-                                        <li>
-                                            <a href="#">Contact</a>
-                                        </li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="department.html">Departments</a></li>
+                                        <li><a href="doctor.html">Specialist &amp; Consultant</a></li>
+                                        <li><a href="https://sumum.soahospitals.com/ultimate-gallery/" target="_blank" rel="noopener">Gallery</a></li>
+                                        <li><a href="https://sumum.soahospitals.com/awards_accreditions/nabh-within-365-days/" target="_blank" rel="noopener">Awards and Accolades</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
-                                <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>
+                                <button type="button" class="vs-menu-toggle eight d-inline-block d-lg-none" aria-label="Open menu"><i class="fas fa-bars"></i></button>
                             </div>
-                            <div class="col-auto d-none d-xl-block">
-                                <div class="header2-btn">
-                                    <a href="#" class="icon-btn style3 searchBoxTggler"><i class="far fa-search"></i></a>
-                                    <a href="#" class="icon-btn style3 sideMenuToggler"><i class="far fa-bars"></i></a>
-                                    <a href="#" class="vs-btn style2">Appointment<i class="fal fa-calendar-alt"></i></a>
+                            <div class="col-auto">
+                                <div class="header-btn-eight sum-ref-header-actions">
+                                    <div class="header-contact-btn">
+                                        <div class="icon-box"><i class="fa fa-headphones"></i></div>
+                                        <span class="sub-title">Emergency?</span>
+                                        <h6 class="nmbr"><a href="tel:+916743500500">+91 0674 3 500 500</a></h6>
+                                    </div>
+                                    <a href="https://appt.soahospitals.com/" class="btn-style8 book sum-book-cta" target="_blank" rel="noopener">Book Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -378,530 +1221,818 @@
             </div>
         </div>
     </header>
-    <!--==============================
-    Breadcumb
-============================== -->
-    <div class="breadcumb-wrapper ">
-        <div class="parallax" data-parallax-image="assets/img/breadcurmb/breadcurmb-1-1.jpg"></div>
-        <div class="container z-index-common">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Doctors</h1>
-                <div class="breadcumb-menu-wrap">
-                    <i class="far fa-home-lg"></i>
-                    <ul class="breadcumb-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Doctors</li>
-                    </ul>
+
+    <section class="doctor-hero">
+        <div class="container-style8">
+            <div class="doctor-hero-badge"><i class="fas fa-stethoscope" aria-hidden="true"></i> Specialist directory</div>
+            <h1>Ultimate Doctors</h1>
+            <p>Browse every department, explore credentials and expertise, and find the right consultant in seconds.</p>
+            <div class="doctor-hero-stats" id="doctorHeroStats" aria-live="polite" hidden>
+                <div class="doctor-hero-stat">
+                    <span class="num" id="statDoctors">—</span>
+                    <span class="lbl">Consultants listed</span>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-    Service Area
-    ==============================-->
-   <section class="doctor-section" id="doctorSection">
-  <div class="container">
-
-    <!-- Tabs -->
-    <div class="doctor-tabs" role="tablist">
-      <button class="doc-tab active" data-tab="cardiology" type="button">Cardiology</button>
-      <button class="doc-tab" data-tab="urology" type="button">Urology</button>
-      <button class="doc-tab" data-tab="neurology" type="button">Neurology</button>
-      <button class="doc-tab" data-tab="gynecology" type="button">Gynecology</button>
-      <button class="doc-tab" data-tab="pediatric" type="button">Pediatric</button>
-      <button class="doc-tab" data-tab="pulmonary" type="button">Pulmonary</button>
-    </div>
-
-    <!-- Cards Load Here -->
-    <div id="doctorContainer" class="doctor-grid"></div>
-
-  </div>
-</section>
-    <!--==============================
-    Features Area
-    ==============================-->
-    <!-- <section class="features-wrapper  " data-bg-src="assets/img/bg/bg-shape-10.jpg">
-        <div class="container vs-container p-0">
-            <div class="row gx-0">
-                <div class=" col-xl col-xxl">
-                    <div class="features-video-box position-relative vs-surface wow" data-wow-delay="0.3s" data-bg-src="assets/img/about/video-img.jpg">
-                        <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video style2 position-center"><i class="fas fa-play"></i></a>
-                    </div>
-                </div>
-                <div class=" col-xl-7 col-xxl-6">
-                    <div class="features-inner">
-                        <div class="row justify-content-center justify-content-xl-start">
-                            <div class="col-md-10 col-lg-7 col-xl-9 mb-4">
-                                <div class="features-about text-center text-xl-start">
-                                    <h2 class="h1 title-divider">Why Choose Us?</h2>
-                                    <p>Proactively revolutionize granular customer service after pandemic internal or "organic" sources impact proactive human</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-10 col-xl-11 col-xxl-12">
-                                <div class="row justify-content-center justify-content-xl-start">
-                                    <div class="col-sm-6 col-xxl-auto mb-30">
-                                        <div class="feaures-mark text-center text-md-start">
-                                            <span class="mark-icon"><i class="far fa-check"></i></span>
-                                            <h3 class="mark-title h5 mb-1 ">Genial Environment</h3>
-                                            <p class="mark-text fs-xs mb-0">Isintermediate est of resources box</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xxl-auto mb-30">
-                                        <div class="feaures-mark text-center text-md-start">
-                                            <span class="mark-icon"><i class="far fa-check"></i></span>
-                                            <h3 class="mark-title h5 mb-1 ">Specialist Surgery</h3>
-                                            <p class="mark-text fs-xs mb-0">Isintermediate est of resources box</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xxl-auto mb-30">
-                                        <div class="feaures-mark text-center text-md-start">
-                                            <span class="mark-icon"><i class="far fa-check"></i></span>
-                                            <h3 class="mark-title h5 mb-1 ">100% Safe & Trused</h3>
-                                            <p class="mark-text fs-xs mb-0">Isintermediate est of resources box</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xxl-auto mb-30">
-                                        <div class="feaures-mark text-center text-md-start">
-                                            <span class="mark-icon"><i class="far fa-check"></i></span>
-                                            <h3 class="mark-title h5 mb-1 ">24/7 take care staff</h3>
-                                            <p class="mark-text fs-xs mb-0">Isintermediate est of resources box</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="doctor-hero-stat">
+                    <span class="num" id="statDepts">—</span>
+                    <span class="lbl">Clinical departments</span>
                 </div>
             </div>
         </div>
     </section>
-    <!--==============================
-    Team Area
-    ==============================-->
-    <!-- <section class="vs-team-wrapper space-top space-md-bottom">
-        <div class="container">
-            <div class="row  text-center justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="section-title">
-                        <div class="sec-icon">
-                            <i class="flaticon-ecg"></i>
-                        </div>
-                        <h2 class="h1 ">Our Patient Says</h2>
-                        <p>Proactively revolutionize granular customer service after pandemic internal or "organic" sources istinctively impact proactive human</p>
-                    </div>
+
+    <section class="sum-doctor-subbar" id="sumDoctorSubbar" aria-label="Search and filter by department">
+        <div class="container-style8">
+            <div class="sum-doctor-subbar__inner">
+                <div class="sum-doctor-subbar__dept-wrap sum-dept-subbar-wrap" id="deptSubbarWrap">
+                    <span class="doctor-label sum-doctor-subbar__label">Department</span>
+                    <button type="button" class="sum-doctor-subbar__dept-trigger" id="deptMegaTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="sumDeptDesktopList">
+                        <span id="deptTriggerLabel">All departments</span>
+                        <i class="fas fa-chevron-down sum-doctor-subbar__chev" aria-hidden="true"></i>
+                    </button>
+                    <ul class="sum-dept-submenu sum-dept-mega-panel--subbar" id="sumDeptDesktopList" role="menu">
+                        <li><span class="sum-dept-loading">Loading departments…</span></li>
+                    </ul>
+                    <select id="deptSelect" class="sum-dept-select-sync" title="Department filter" aria-hidden="true" tabindex="-1">
+                        <option value="__all__">All departments</option>
+                    </select>
                 </div>
-            </div>
-            <div class="row vs-carousel wow fadeIn" data-wow-delay="0.3s" data-arrows="true" data-slide-show="3" data-lg-slide-show="2">
-                <div class="col-xl-4 mb-30">
-                    <div class="team-card">
-                        <div class="team-head">
-                            <img src="assets/img/team/t-1-1.png" alt="Team Area" class="w-100">
-                            <div class="team-card-links">
-                                <a class="team-links-toggler" href="#"><i class="fas fa-share-alt"></i></a>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fas fa-basketball-ball"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-body">
-                            <h3 class="h4 mb-0"><a href="team-details.html" class="text-reset">David Smith</a></h3>
-                            <p class="fs-xs degi text-theme mb-2">Specialist</p>
-                            <p class="fs-xs">Conceptualize user-centric web-readiness via economically sound e-services. Interactively coordinate next-generation </p>
-                            <div class="">
-                                <p class="fs-xs team-info"><i class="fas fa-phone text-theme"></i><a class="text-reset" href="tel:+592201520156">+592 2015 20156</a></p>
-                                <p class="fs-xs team-info"><i class="fas fa-envelope text-theme"></i><a class="text-reset" href="mailto:info.example@mail.com">info.example@mail.com</a></p>
-                            </div>
-                        </div>
+                <div class="sum-doctor-subbar__search doctor-field">
+                    <label for="doctorSearch" class="doctor-label sum-doctor-subbar__label">Search</label>
+                    <div class="doctor-search-wrap">
+                        <span class="doctor-search-icon" aria-hidden="true"><i class="fas fa-search"></i></span>
+                        <input id="doctorSearch" class="doctor-search" type="search" inputmode="search" autocomplete="off" placeholder="Search by name or specialty" aria-describedby="doctorSearchHint">
                     </div>
-                </div>
-                <div class="col-xl-4 mb-30">
-                    <div class="team-card">
-                        <div class="team-head">
-                            <img src="assets/img/team/t-1-2.png" alt="Team Area" class="w-100">
-                            <div class="team-card-links">
-                                <a class="team-links-toggler" href="#"><i class="fas fa-share-alt"></i></a>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fas fa-basketball-ball"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-body">
-                            <h3 class="h4 mb-0"><a href="team-details.html" class="text-reset">Vivi Marian</a></h3>
-                            <p class="fs-xs degi text-theme mb-2">Osteopathic</p>
-                            <p class="fs-xs">Conceptualize user-centric web-readiness via economically sound e-services. Interactively coordinate next-generation </p>
-                            <div class="">
-                                <p class="fs-xs team-info"><i class="fas fa-phone text-theme"></i><a class="text-reset" href="tel:+592201520156">+592 2015 20156</a></p>
-                                <p class="fs-xs team-info"><i class="fas fa-envelope text-theme"></i><a class="text-reset" href="mailto:info.example@mail.com">info.example@mail.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 mb-30">
-                    <div class="team-card">
-                        <div class="team-head">
-                            <img src="assets/img/team/t-1-3.png" alt="Team Area" class="w-100">
-                            <div class="team-card-links">
-                                <a class="team-links-toggler" href="#"><i class="fas fa-share-alt"></i></a>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fas fa-basketball-ball"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-body">
-                            <h3 class="h4 mb-0"><a href="team-details.html" class="text-reset">Farhan Moris</a></h3>
-                            <p class="fs-xs degi text-theme mb-2">Pediatrician</p>
-                            <p class="fs-xs">Conceptualize user-centric web-readiness via economically sound e-services. Interactively coordinate next-generation </p>
-                            <div class="">
-                                <p class="fs-xs team-info"><i class="fas fa-phone text-theme"></i><a class="text-reset" href="tel:+592201520156">+592 2015 20156</a></p>
-                                <p class="fs-xs team-info"><i class="fas fa-envelope text-theme"></i><a class="text-reset" href="mailto:info.example@mail.com">info.example@mail.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 mb-30">
-                    <div class="team-card">
-                        <div class="team-head">
-                            <img src="assets/img/team/t-1-4.png" alt="Team Area" class="w-100">
-                            <div class="team-card-links">
-                                <a class="team-links-toggler" href="#"><i class="fas fa-share-alt"></i></a>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fas fa-basketball-ball"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-body">
-                            <h3 class="h4 mb-0"><a href="team-details.html" class="text-reset">Jerzzy Lamot</a></h3>
-                            <p class="fs-xs degi text-theme mb-2">Surgeon</p>
-                            <p class="fs-xs">Conceptualize user-centric web-readiness via economically sound e-services. Interactively coordinate next-generation </p>
-                            <div class="">
-                                <p class="fs-xs team-info"><i class="fas fa-phone text-theme"></i><a class="text-reset" href="tel:+592201520156">+592 2015 20156</a></p>
-                                <p class="fs-xs team-info"><i class="fas fa-envelope text-theme"></i><a class="text-reset" href="mailto:info.example@mail.com">info.example@mail.com</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    <p id="doctorSearchHint" class="doctor-hint sum-doctor-subbar__hint">Results update as you type. Clear the box to see everyone again.</p>
                 </div>
             </div>
         </div>
-    </section> --> -->
-    <!--==============================
-			Footer Area
-	==============================-->
-    <footer class="footer-wrapper footer-layout1" data-bg-src="assets/img/bg/bg-shape-4.png">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-sm-6 col-md-auto text-center text-sm-start">
-                        <div class="footer1-logo bg-white">
-                            <a href="index.html"><img src="assets/img/logo.png" style="width:260px" alt="Logo"></a>
-                        </div>
-                    </div>
-                    <div class=" col-sm-6 col-md-auto pt-20 pt-sm-0 pb-20 pb-sm-0 text-center text-sm-end">
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="far fa-basketball-ball"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
+    </section>
+
+    <section class="doctor-shell" id="doctor-directory">
+        <div class="container-style8">
+            <div class="doctor-panel">
+                <div id="doctorStatus" class="status-row" role="status">Loading doctor list…</div>
+                <div id="doctorResultSummary" class="doctor-result-summary" role="status" aria-live="polite" hidden></div>
+                <div id="doctorResults" class="doctor-results"></div>
             </div>
         </div>
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-lg-3 col-xl-3">
-                        <div class="widget footer-widget  ">
-                            <h3 class="widget_title">About Us</h3>
-                            <div class="vs-widget-about">
-                                <p>Energistically reintermediate worldwide interfaces vis-a-vis emerging integrate leadership skills.</p>
-                                <h4><a class="text-theme hover-white" href="tel:693232512456"><i class="fas fa-phone-volume me-2 pe-1"></i> 693 2325 12456</a></h4>
-                                <div class="d-flex mt-3 pt-1">
-                                    <div class="avater-small mr-20">
-                                        <img src="assets/img/author/author-2-3.jpg" alt="Avater Image">
-                                    </div>
-                                    <div class="media-body align-self-center">
-                                        <h5 class="mb-0 font-body lh-1 text-white">Dr. David Smith</h5>
-                                        <span class="text-theme fs-xs lh-1">Senior Consultant</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-auto col-xl-auto">
-                        <div class="widget footer-widget widget_nav_menu   ">
-                            <h3 class="widget_title">Services</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="#">Body Surgery</a></li>
-                                    <li><a href="#">Major Operation</a></li>
-                                    <li><a href="#">Child Care</a></li>
-                                    <li><a href="#">Heart Surgery</a></li>
-                                    <li><a href="#">Mental Health</a></li>
-                                    <li><a href="#">Urgent Care</a></li>
+    </section>
+
+    <footer class="footer-wrapper footer-layout8" data-bg-src="assets/img/bg/footer-bg-8-1.jpg">
+        <div class="widget-area v8">
+            <div class="container-style8">
+                <div class="row gx-0 gy-4">
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="widget footer-widget">
+                            <div class="vs-widget-about-eight">
+                                <div class="footer-logo"><img src="assets/img/logo.png" alt="logo"></div>
+                                <p class="footer-text">SUM Ultimate Medicare offers advanced, patient-centric healthcare with comprehensive specialist services.</p>
+                                <ul class="footer-link-eight">
+                                    <li><i class="fa fa-envelope"></i><a href="#">sumum_bbsr@soahospitals.com</a></li>
+                                    <li><i class="fa fa-map-marker"></i>K-8 ,KALINGA NAGAR, GHATIKIA, BHUBANESWAR, 751003, ODISHA</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 col-xl-auto">
-                        <div class="widget footer-widget  ">
-                            <h4 class="widget_title">Gallery Posts</h4>
-                            <div class="footer-gallery">
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-1.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-2.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-3.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-4.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-5.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
-                                <div class="gal-item">
-                                    <a href="#"><img src="assets/img/widget/gal-1-6.jpg" alt="Gallery Image" class="w-100"></a>
-                                </div>
+                    <div class="col-xl-4 col-lg-6 col-md-12">
+                        <div class="widget v2 footer-widget time">
+                            <h3 class="widget_title-eight">Contact Info</h3>
+                            <div class="vs-widget-shedule">
+                                <ul class="footer-shedule">
+                                    <li class="one"><span>Mon - Fri:</span>8:00 am - 8:00 pm</li>
+                                    <li><span>Saturday:</span>9:00 am - 6:00 pm</li>
+                                    <li class="one"><span>Sunday:</span>9:00 am - 6:00 pm</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 col-xl-3">
-                        <div class="widget footer-widget   ">
-                            <h3 class="widget_title">Visiting Hours</h3>
-                            <div class="footer-table">
-                                <table>
-                                    <tr>
-                                        <td>Mon - Fri:</td>
-                                        <td>8:00 am - 8:00 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Saturday:</td>
-                                        <td>9:00 am - 6:00 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sunday:</td>
-                                        <td>9:00 am - 6:00 pm</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="address-line">
-                                <i class="far fa-map-marker-alt text-theme fs-md"></i>
-                                <a href="#" class="text-reset fs-md">374 William S Canning Blvd, Fall River MA 2721</a>
+                    <div class="col-xl-4 col-lg-6 col-md-12">
+                        <div class="widget v2 footer-widget widget_nav_menu-eight">
+                            <h3 class="widget_title-eight">Department</h3>
+                            <div class="menu-all-pages-container-two">
+                                <ul class="menu-eight v1">
+                                    <li><a href="#">Cardiology</a></li>
+                                    <li><a href="#">Neurology</a></li>
+                                    <li><a href="#">Oncology</a></li>
+                                    <li><a href="#">Urology</a></li>
+                                    <li><a href="#">Orthopedics</a></li>
+                                    <li><a href="#">Pulmonary Medicine</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright bg-theme">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-auto text-center text-md-end">
-                        <p class="mb-0 text-white">Copyright <i class="fal fa-copyright"></i> 2024 <a class="text-white" href="index.html"></a>. All rights reserved by <a class="text-white" href="https://themeforest.net/user/vecuro_themes"></a>.</p>
+        <div class="copyright-wrap-eight">
+            <div class="container-style8">
+                <div class="lower-footer">
+                    <div class="copyright-text-eight">
+                        <p class="mb-0">Copyright <i class="fal fa-copyright"></i> 2026. All rights reserved.</p>
                     </div>
-                    <div class="col-auto d-none d-md-block">
-                        <ul class="footer-bottom-menu">
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">About</a></li>
-                        </ul>
-                    </div>
+                    <ul class="footer-social-links-eight">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
 
+    <a href="#" class="scrollToTop scroll-bottom style2"><i class="fas fa-arrow-alt-up"></i></a>
 
-
-    <!--********************************
-			Code End  Here 
-	******************************** -->
-
-
-    <!-- Scroll To Top -->
-    <a href="#" class="scrollToTop scroll-bottom  style2"><i class="fas fa-arrow-alt-up"></i></a>
-   
-
-
-    <!--==============================
-        All Js File
-    ============================== -->
-    <!-- Jquery -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <!-- Slick Slider -->
     <script src="assets/js/slick.min.js"></script>
-    <!-- <script src="assets/js/app.min.js"></script> -->
-    <!-- Layerslider -->
     <script src="assets/js/layerslider.utils.js"></script>
     <script src="assets/js/layerslider.transitions.js"></script>
     <script src="assets/js/layerslider.kreaturamedia.jquery.js"></script>
-    <!-- Bootstrap -->
     <script src="assets/js/bootstrap.min.js"></script>
-    <!-- jQuery Datepicker -->
     <script src="assets/js/jquery.datetimepicker.min.js"></script>
-    <!-- Magnific Popup -->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Isotope Filter -->
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!-- Parallax Scroll -->
     <script src="assets/js/universal-parallax.min.js"></script>
-    <!-- WOW Animation -->
     <script src="assets/js/wow.min.js"></script>
-    <!-- Custom Carousel -->
     <script src="assets/js/vscustom-carousel.min.js"></script>
-    <!-- Form Js -->
     <script src="assets/js/ajax-mail.js"></script>
-    <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        (function () {
+            const sourceUrl = "https://sumum.soahospitals.com/doctors-page/";
+            const mirrorUrl = "https://r.jina.ai/http://sumum.soahospitals.com/doctors-page/";
+            const localDataHref = new URL("assets/data/doctors-page.md", window.location.href).href;
+            const apptUrl = "https://appt.soahospitals.com/";
 
-  const doctorsData = {
-    cardiology: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ],
-    urology: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ],
-    neurology: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ],
-    gynecology: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ],
-    pediatric: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ],
-    pulmonary: [
-      { name: "Dr. Norman Colins", role: "Senior Cardiologist", img: "assets/img/team/t-1-1.png", desc: "10+ years experience in heart surgery." },
-      { name: "Dr. Peter Adlock", role: "Cardiac Surgeon", img: "assets/img/team/t-1-2.png", desc: "Expert in cardiac procedures." },
-      { name: "Dr. Amelia Grant", role: "Heart Specialist", img: "assets/img/team/t-1-3.png", desc: "Specialist in heart diseases." }
-    ]
-  };
+            const statusEl = document.getElementById("doctorStatus");
+            const resultsEl = document.getElementById("doctorResults");
+            const resultSummaryEl = document.getElementById("doctorResultSummary");
+            const deptSelect = document.getElementById("deptSelect");
+            const searchEl = document.getElementById("doctorSearch");
+            const deptDesktopList = document.getElementById("sumDeptDesktopList");
+            const deptSubbarWrap = document.getElementById("deptSubbarWrap");
+            const deptMegaTrigger = document.getElementById("deptMegaTrigger");
+            let deptHoverSuspendTimer = null;
 
-  const container = document.getElementById("doctorContainer");
-  const tabs = document.querySelectorAll(".doc-tab");
-  const modal = document.getElementById("doctorModal");
+            let data = [];
+            let activeDept = "__all__";
+            let searchText = "";
 
-  function loadDoctors(category) {
-    const doctors = doctorsData[category];
+            function escHtml(str) {
+                return String(str)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
 
-    container.innerHTML = doctors.map((doc, index) => `
-      <div class="doctor-card" data-index="${index}" data-category="${category}">
-        <img src="${doc.img}" alt="${doc.name}">
-        <h3>${doc.name}</h3>
-        <p>${doc.role}</p>
-      </div>
-    `).join("");
-  }
+            function deptIconClass(title) {
+                var t = String(title).toLowerCase();
+                if (t === "all departments") return "fa-th-large";
+                var pairs = [
+                    [/cardio|cvts|vascular thoracic|interventional card/i, "fa-heartbeat"],
+                    [/nephro/i, "fa-tint"],
+                    [/diabet|endocrin/i, "fa-syringe"],
+                    [/infectious|immuniz/i, "fa-shield-alt"],
+                    [/psychiat|psychology|counsel/i, "fa-brain"],
+                    [/oncolog|oncolo|radiation|chemotherapy|molecular/i, "fa-ribbon"],
+                    [/ortho|joint|bone|prosthetic/i, "fa-bone"],
+                    [/physio|rehab/i, "fa-walking"],
+                    [/rheumat/i, "fa-hands-helping"],
+                    [/urolog/i, "fa-prescription-bottle"],
+                    [/nuclear/i, "fa-atom"],
+                    [/critical care|icu/i, "fa-procedures"],
+                    [/emergency|trauma|ambulance|24 hour/i, "fa-ambulance"],
+                    [/surgery|surgical|bariatric|laparoscopic|minimal access|burn unit/i, "fa-user-md"],
+                    [/medicine|laboratory|pathology|phlebotomy|clinical research/i, "fa-notes-medical"],
+                    [/radiology|interventional radio/i, "fa-x-ray"],
+                    [/obstet|gyna|gynec|fertil|ivf/i, "fa-baby"],
+                    [/paediat|pediatric|neonat/i, "fa-child"],
+                    [/plastic|cosmetic|reconstruct/i, "fa-hand-sparkles"],
+                    [/dental|dentistry|maxillofacial/i, "fa-tooth"],
+                    [/gastro|hepat|liver|pancrea|medical gastro/i, "fa-pills"],
+                    [/dermat/i, "fa-hand-sparkles"],
+                    [/ent|otolaryn|audiology|speech|skull base/i, "fa-head-side-cough"],
+                    [/haemat|hematology|blood bank|transfusion/i, "fa-tint"],
+                    [/neurosur/i, "fa-brain"],
+                    [/neurology|neuro[- ]inter/i, "fa-brain"],
+                    [/transplant|marrow/i, "fa-procedures"],
+                    [/palliat|pain /i, "fa-hand-holding-heart"],
+                    [/pulmon|respiratory|pulmonary|thoracic/i, "fa-lungs"],
+                    [/ophthal|eye/i, "fa-eye"],
+                    [/anaesthes|anesthes/i, "fa-syringe"],
+                    [/wellness|check|nutrit|diet/i, "fa-clipboard-list"],
+                    [/pharmacy/i, "fa-pills"],
+                    [/visiting/i, "fa-user-md"],
+                    [/research/i, "fa-flask"],
+                    [/audiometry/i, "fa-assistive-listening-systems"],
+                ];
+                for (var i = 0; i < pairs.length; i++) {
+                    if (pairs[i][0].test(t)) return pairs[i][1];
+                }
+                return "fa-hospital";
+            }
 
-  /* Tab click */
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      document.querySelector(".doc-tab.active").classList.remove("active");
-      tab.classList.add("active");
-      loadDoctors(tab.dataset.tab);
-    });
-  });
+            function buildDeptMenuItem(idx, title, rowIndex, spanAllColumns, doctorCount) {
+                var icon = deptIconClass(title);
+                var tone = rowIndex % 2 === 0 ? "sum-dept-row__icon--lavender" : "sum-dept-row__icon--teal";
+                var idxAttr = typeof idx === "string" ? idx : String(idx);
+                var liCls = spanAllColumns ? ' class="sum-dept-row--all"' : "";
+                var countBadge = "";
+                var ariaLabel = "";
+                if (typeof doctorCount === "number" && doctorCount >= 0) {
+                    var unit = doctorCount === 1 ? "doctor" : "doctors";
+                    countBadge =
+                        '<span class="sum-dept-row__count" title="' +
+                        doctorCount +
+                        " " +
+                        unit +
+                        '">' +
+                        doctorCount +
+                        "</span>";
+                    ariaLabel =
+                        ' aria-label="' +
+                        escHtml(title) +
+                        ", " +
+                        doctorCount +
+                        " " +
+                        unit +
+                        '"';
+                }
+                return (
+                    "<li" +
+                    liCls +
+                    '><a href="#doctor-directory" class="sum-dept-pick sum-dept-row" data-dept-index="' +
+                    idxAttr +
+                    '"' +
+                    ariaLabel +
+                    '><span class="sum-dept-row__main"><span class="sum-dept-row__icon ' +
+                    tone +
+                    '" aria-hidden="true"><i class="fas ' +
+                    icon +
+                    '"></i></span><span class="sum-dept-row__label">' +
+                    escHtml(title) +
+                    "</span>" +
+                    countBadge +
+                    '</span><span class="sum-dept-row__chev" aria-hidden="true"><i class="fas fa-chevron-right"></i></span></a></li>'
+                );
+            }
 
-  /* Card click → popup */
-  container.addEventListener("click", function(e){
-    const card = e.target.closest(".doctor-card");
-    if(!card) return;
+            function doctorInitials(name) {
+                const cleaned = String(name)
+                    .replace(/^\(?Prof\)?\.?\s*/i, "")
+                    .replace(/^Dr\.?\s*/i, "")
+                    .replace(/^Senior\s+/i, "")
+                    .replace(/^Sr\.?\s*/i, "")
+                    .trim();
+                const parts = cleaned.split(/\s+/).filter(Boolean);
+                if (!parts.length) return "MD";
+                if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+                return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+            }
 
-    const index = card.dataset.index;
-    const category = card.dataset.category;
-    const doc = doctorsData[category][index];
+            function doctorProfileHref(doc, deptTitle) {
+                return (
+                    "doctor-profile.html?name=" +
+                    encodeURIComponent(doc.name) +
+                    "&dept=" +
+                    encodeURIComponent(deptTitle)
+                );
+            }
 
-    document.getElementById("modalImg").src = doc.img;
-    document.getElementById("modalName").textContent = doc.name;
-    document.getElementById("modalRole").textContent = doc.role;
-    document.getElementById("modalDesc").textContent = doc.desc;
+            function metaIcon(line) {
+                const t = String(line).toLowerCase();
+                if (/availability|consult|hod|department/i.test(t)) return "fa-user-md";
+                if (/mbbs|md|dm|qualification|fellow|f\.?r\.?c\.?s/i.test(t)) return "fa-graduation-cap";
+                return "fa-award";
+            }
 
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
-  });
+            function extractConsultingTiming(doc) {
+                var pool = []
+                    .concat(Array.isArray(doc.meta) ? doc.meta : [])
+                    .concat(Array.isArray(doc.body) ? doc.body : []);
+                var seen = {};
+                pool = pool.filter(function (line) {
+                    var clean = String(line || "").replace(/\s+/g, " ").trim();
+                    if (!clean) return false;
+                    if (seen[clean]) return false;
+                    seen[clean] = true;
+                    return true;
+                });
 
-  /* Close popup */
-  document.querySelector(".doctor-close").onclick = function () {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-  };
+                var timingLine = pool.find(function (line) {
+                    return /(availability|consult|timing|time|opd|morning|evening|am|pm|mon|tue|wed|thu|fri|sat|sun)/i.test(line);
+                });
 
-  window.onclick = function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-  };
+                if (!timingLine) return "Consulting timing: By prior appointment";
 
-  loadDoctors("cardiology");
+                var cleaned = String(timingLine)
+                    .replace(/^\*+|\*+$/g, "")
+                    .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
+                    .replace(/\s+/g, " ")
+                    .trim();
 
-});
-</script>
-<div id="doctorModal" class="doctor-modal">
-  <div class="doctor-modal-content">
+                if (!/^consulting timing/i.test(cleaned)) {
+                    if (/^availability/i.test(cleaned) || /^consult/i.test(cleaned)) {
+                        cleaned = cleaned.replace(/^availability\s*:?\s*/i, "Consulting timing: ");
+                        cleaned = cleaned.replace(/^consult\s*:?\s*/i, "Consulting timing: ");
+                    } else {
+                        cleaned = "Consulting timing: " + cleaned;
+                    }
+                }
+                return cleaned;
+            }
 
-    <span class="doctor-close">&times;</span>
+            function renderBioBlock(doc, profileHref) {
+                const bio = doc.body.join("\n").trim();
+                if (!bio) return "";
+                if (bio.length <= 220) {
+                    return (
+                        '<p class="doctor-profile-bio">' +
+                        escHtml(bio) +
+                        '</p><a class="doctor-profile-readfull-link" href="' +
+                        profileHref +
+                        '"><i class="fas fa-arrow-right" aria-hidden="true"></i> Read full profile</a>'
+                    );
+                }
+                let short = bio.slice(0, 220);
+                const cut = short.lastIndexOf(" ");
+                if (cut > 120) short = short.slice(0, cut);
+                return (
+                    '<p class="doctor-profile-bio">' +
+                    escHtml(short) +
+                    "…</p>" +
+                    '<a class="doctor-profile-readfull-link" href="' +
+                    profileHref +
+                    '"><i class="fas fa-arrow-right" aria-hidden="true"></i> Read full profile</a>'
+                );
+            }
 
-    <div class="doctor-modal-header">
-      <img id="modalImg" alt="">
-      <div class="doctor-basic">
-        <h2 id="modalName"></h2>
-        <p id="modalRole" class="doctor-role"></p>
-        <div class="doctor-badges">
-          <span>✔ Verified</span>
-          <span>⭐ 4.9 Rating</span>
-        </div>
-      </div>
-    </div>
+            function closeDeptMegaPanel() {
+                if (deptSubbarWrap) deptSubbarWrap.classList.remove("sum-dept-subbar-wrap--open");
+                if (deptMegaTrigger) deptMegaTrigger.setAttribute("aria-expanded", "false");
+            }
 
-    <div class="doctor-modal-body">
-      <p id="modalDesc"></p>
+            function suspendDeptHoverBriefly() {
+                if (!deptSubbarWrap) return;
+                deptSubbarWrap.classList.add("sum-dept-subbar-wrap--suspend-hover");
+                if (deptHoverSuspendTimer) window.clearTimeout(deptHoverSuspendTimer);
+                deptHoverSuspendTimer = window.setTimeout(function () {
+                    deptSubbarWrap.classList.remove("sum-dept-subbar-wrap--suspend-hover");
+                }, 700);
+            }
 
-      <div class="doctor-stats">
-        <div>
-          <strong>Experience</strong>
-          <span>10+ Years</span>
-        </div>
-        <div>
-          <strong>Patients</strong>
-          <span>5K+</span>
-        </div>
-        <div>
-          <strong>Department</strong>
-          <span>Cardiology</span>
-        </div>
-      </div>
+            function updateDeptTriggerLabel() {
+                var el = document.getElementById("deptTriggerLabel");
+                if (!el) return;
+                el.textContent = activeDept === "__all__" ? "All departments" : activeDept;
+            }
 
-      <button class="appointment-btn">Book Appointment</button>
-    </div>
+            function markActiveDeptInNav() {
+                document.querySelectorAll("a.sum-dept-pick").forEach(function (a) {
+                    a.classList.remove("is-active");
+                    const v = a.getAttribute("data-dept-index");
+                    if (v === "__all__" && activeDept === "__all__") {
+                        a.classList.add("is-active");
+                    } else if (v !== "__all__" && v !== null) {
+                        const i = parseInt(v, 10);
+                        if (data[i] && data[i].title === activeDept) {
+                            a.classList.add("is-active");
+                        }
+                    }
+                });
+            }
 
-  </div>
-</div>
+            function setDepartmentFilter(indexVal) {
+                if (indexVal === "__all__") {
+                    activeDept = "__all__";
+                    deptSelect.value = "__all__";
+                } else {
+                    const i = parseInt(indexVal, 10);
+                    if (!isNaN(i) && data[i]) {
+                        activeDept = data[i].title;
+                        deptSelect.value = String(i);
+                    } else {
+                        activeDept = "__all__";
+                        deptSelect.value = "__all__";
+                    }
+                }
+                renderDoctors();
+                updateDeptTriggerLabel();
+            }
 
+            function renderDepartmentMenus() {
+                const emptyHtml = '<li><span class="sum-dept-error">No departments found.</span></li>';
+                if (!data.length) {
+                    if (deptDesktopList) deptDesktopList.innerHTML = emptyHtml;
+                    return;
+                }
+                var totalDoctors = 0;
+                data.forEach(function (d) {
+                    totalDoctors += d.doctors.length;
+                });
+                const desktopParts = [buildDeptMenuItem("__all__", "All departments", 0, true, totalDoctors)];
+                data.forEach(function (d, i) {
+                    desktopParts.push(buildDeptMenuItem(i, d.title, i + 1, false, d.doctors.length));
+                });
+                if (deptDesktopList) deptDesktopList.innerHTML = desktopParts.join("");
+                markActiveDeptInNav();
+                updateDeptTriggerLabel();
+            }
+
+            function setDepartmentMenusError() {
+                const errHtml = '<li><span class="sum-dept-error">Open directory on the hospital site, or refresh.</span></li>';
+                if (deptDesktopList) deptDesktopList.innerHTML = errHtml;
+            }
+
+            document.addEventListener("click", function (e) {
+                const pick = e.target.closest("a.sum-dept-pick");
+                if (pick) {
+                    const idx = pick.getAttribute("data-dept-index");
+                    if (idx === null) return;
+                    e.preventDefault();
+                    setDepartmentFilter(idx);
+                    closeDeptMegaPanel();
+                    suspendDeptHoverBriefly();
+                    const wrap = document.querySelector(".vs-menu-wrapper");
+                    if (wrap) wrap.classList.remove("vs-body-visible");
+                    const dir = document.getElementById("doctor-directory");
+                    if (dir) dir.scrollIntoView({ behavior: "smooth", block: "start" });
+                    return;
+                }
+                if (deptSubbarWrap && deptSubbarWrap.classList.contains("sum-dept-subbar-wrap--open")) {
+                    if (!e.target.closest(".sum-dept-subbar-wrap")) {
+                        closeDeptMegaPanel();
+                    }
+                }
+            });
+
+            if (deptMegaTrigger && deptSubbarWrap) {
+                deptMegaTrigger.addEventListener("click", function (e) {
+                    if (window.matchMedia("(hover: hover) and (min-width: 992px)").matches) {
+                        return;
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                    deptSubbarWrap.classList.toggle("sum-dept-subbar-wrap--open");
+                    deptMegaTrigger.setAttribute(
+                        "aria-expanded",
+                        deptSubbarWrap.classList.contains("sum-dept-subbar-wrap--open") ? "true" : "false"
+                    );
+                });
+            }
+
+            function normDoctorName(str) {
+                return String(str)
+                    .replace(/^Dr\.?\s*/i, "dr ")
+                    .replace(/\s+/g, " ")
+                    .trim()
+                    .toLowerCase();
+            }
+
+            function isProbableDoctorNameLine(clean) {
+                if (/^\(Prof\)\s*Dr\.?|^Prof\.?\s*Dr\.?/i.test(clean)) return true;
+                if (!/^Dr\.?\s+/i.test(clean)) return false;
+                if (clean.length > 95) return false;
+                const wc = clean.split(/\s+/).length;
+                if (wc > 12) return false;
+                if (/\b(has|had|is|was|completed|experience|career|member|actively|extensive)\b/i.test(clean)) return false;
+                if (/,\s*(Senior|Consultant|Department|MD|MBBS|MS|DM|DNB|PDF|Fellow)/i.test(clean)) return false;
+                return true;
+            }
+
+            function parseDoctors(rawText) {
+                const text = String(rawText).replace(/^\uFEFF/, "");
+                const allLines = text.split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
+                let start = 0;
+                for (let i = 0; i < allLines.length; i++) {
+                    if (/^#####\s+/.test(allLines[i])) {
+                        start = i;
+                        break;
+                    }
+                }
+                const lines = allLines.slice(start);
+                const departments = [];
+                let dept = null;
+                let doc = null;
+
+                function pushDoc() {
+                    if (dept && doc && doc.name) dept.doctors.push(doc);
+                    doc = null;
+                }
+                function pushDept() {
+                    pushDoc();
+                    if (dept && dept.title) departments.push(dept);
+                }
+
+                for (const line of lines) {
+                    if (/^######/.test(line)) continue;
+                    if (/^####\s+Dr/i.test(line)) continue;
+                    if (/^####\s+\[Dr\.?/i.test(line)) continue;
+                    if (/^####\s+\[\(Prof\.\)\s*Dr\.?/i.test(line)) continue;
+                    if (/^!\[/.test(line.trim())) continue;
+
+                    const clean = line.replace(/^#+\s*/, "").trim();
+                    if (
+                        /^Source URL:/i.test(clean) ||
+                        /^Title:/i.test(clean) ||
+                        /^URL Source:/i.test(clean) ||
+                        /^Markdown Content:/i.test(clean) ||
+                        clean === "×" ||
+                        /^GET AN APPOINTMENT!?$/i.test(clean)
+                    ) {
+                        continue;
+                    }
+                    if (/^\[[^\]]*\]\([^)]+\)$/.test(clean)) continue;
+                    if (/^\*\*[^*]+\*\*:?\s*$/.test(clean)) continue;
+                    if (/^```/.test(clean)) continue;
+
+                    if (/^#####\s+/.test(line)) {
+                        const candidate = clean.replace(/\s+/g, " ").trim();
+                        if (candidate && !/^Dr\.?/i.test(candidate) && !/^Availability/i.test(candidate)) {
+                            pushDept();
+                            dept = { title: candidate, doctors: [] };
+                            continue;
+                        }
+                    }
+
+                    if (isProbableDoctorNameLine(clean)) {
+                        if (doc && normDoctorName(doc.name) === normDoctorName(clean)) {
+                            continue;
+                        }
+                        pushDoc();
+                        if (!dept) dept = { title: "Doctors", doctors: [] };
+                        doc = { name: clean, meta: [], body: [] };
+                        continue;
+                    }
+
+                    if (!dept) dept = { title: "Doctors", doctors: [] };
+                    if (!doc) doc = { name: "Doctor Profile", meta: [], body: [] };
+
+                    if (
+                        /^Availability/i.test(clean) ||
+                        /^Consultant/i.test(clean) ||
+                        /^Senior Consultant/i.test(clean) ||
+                        /^Sr\.?\s*Consultant/i.test(clean) ||
+                        /^HOD/i.test(clean) ||
+                        /^Head\b/i.test(clean) ||
+                        /^Department\b/i.test(clean) ||
+                        /^MBBS/i.test(clean) ||
+                        /^Qualifications?/i.test(clean) ||
+                        /^MD\b/i.test(clean) ||
+                        /^DM\b/i.test(clean) ||
+                        /^DNB/i.test(clean) ||
+                        /^MS\b/i.test(clean) ||
+                        /^MCh/i.test(clean) ||
+                        /^PDF\b/i.test(clean) ||
+                        /^FRCS/i.test(clean) ||
+                        /^MRCP/i.test(clean) ||
+                        /^Fellow/i.test(clean)
+                    ) {
+                        doc.meta.push(clean);
+                    } else if (!/^GET AN APPOINTMENT!?$/i.test(clean)) {
+                        doc.body.push(clean);
+                    }
+                }
+                pushDept();
+                return departments.filter((d) => d.doctors.length > 0);
+            }
+
+            function doctorMatches(doc, deptTitle) {
+                if (!searchText) return true;
+                const hay = [
+                    doc.name,
+                    deptTitle,
+                    doc.meta.join(" "),
+                    doc.body.join(" ")
+                ].join(" ").toLowerCase();
+                return hay.includes(searchText);
+            }
+
+            function countFilteredDoctors() {
+                let n = 0;
+                const target = activeDept === "__all__" ? data : data.filter((d) => d.title === activeDept);
+                target.forEach(function (dept) {
+                    dept.doctors.forEach(function (doc) {
+                        if (doctorMatches(doc, dept.title)) n += 1;
+                    });
+                });
+                return n;
+            }
+
+            function updateSummary() {
+                if (!data.length) {
+                    resultSummaryEl.hidden = true;
+                    resultSummaryEl.textContent = "";
+                    return;
+                }
+                resultSummaryEl.hidden = false;
+                const n = countFilteredDoctors();
+                if (n === 0) {
+                    resultSummaryEl.textContent =
+                        "No doctors match your search or department filter. Clear the search box or choose All departments.";
+                } else if (n === 1) {
+                    resultSummaryEl.textContent = "Showing 1 doctor.";
+                } else {
+                    resultSummaryEl.textContent = "Showing " + n + " doctors.";
+                }
+            }
+
+            function renderDeptSelect() {
+                const opts = ['<option value="__all__">All departments</option>'].concat(
+                    data.map(function (d, i) {
+                        return '<option value="' + i + '">' + escHtml(d.title) + "</option>";
+                    })
+                );
+                deptSelect.innerHTML = opts.join("");
+                if (activeDept === "__all__") {
+                    deptSelect.value = "__all__";
+                } else {
+                    const idx = data.findIndex(function (d) {
+                        return d.title === activeDept;
+                    });
+                    deptSelect.value = idx >= 0 ? String(idx) : "__all__";
+                }
+                updateDeptTriggerLabel();
+            }
+
+            function renderDoctors() {
+                const target = activeDept === "__all__" ? data : data.filter((d) => d.title === activeDept);
+                const blocks = target.map((dept) => {
+                    const doctors = dept.doctors.filter((doc) => doctorMatches(doc, dept.title));
+                    if (!doctors.length) return "";
+                    const cards = doctors.map((doc) => {
+                        const initials = escHtml(doctorInitials(doc.name));
+                        const profileHref = doctorProfileHref(doc, dept.title);
+                        const consultTiming = escHtml(extractConsultingTiming(doc));
+                        const actions =
+                            '<div class="doctor-profile-actions">' +
+                            '<a class="doctor-profile-outline" href="' +
+                            profileHref +
+                            '"><i class="fas fa-user-md" aria-hidden="true"></i> View profile</a>' +
+                            '<a class="doctor-profile-book" href="' +
+                            apptUrl +
+                            '" target="_blank" rel="noopener noreferrer"><i class="fal fa-calendar-check" aria-hidden="true"></i> Book appointment</a>' +
+                            "</div>";
+                        return [
+                            '<article class="doctor-profile-card">',
+                            '<div class="doctor-profile-card__inner">',
+                            '<div class="doctor-profile-avatar" aria-hidden="true">' + initials + "</div>",
+                            '<div class="doctor-profile-card__body">',
+                            '<h3 class="doctor-profile-name"><a href="' + profileHref + '">' + escHtml(doc.name) + "</a></h3>",
+                            '<p class="doctor-profile-timing"><i class="far fa-clock" aria-hidden="true"></i><span>' + consultTiming + "</span></p>",
+                            actions,
+                            "</div></div></article>"
+                        ].join("");
+                    }).join("");
+                    var badgeText =
+                        doctors.length === 1 ? "1 doctor" : doctors.length + " doctors";
+                    return (
+                        '<section class="dept-block"><h2 class="dept-title">' +
+                        '<span class="dept-title__inner"><span class="dept-title__text">' +
+                        escHtml(dept.title) +
+                        '</span><span class="dept-title__badge">' +
+                        escHtml(badgeText) +
+                        '</span></span></h2><div class="doctor-profile-grid">' +
+                        cards +
+                        "</div></section>"
+                    );
+                }).join("");
+
+                resultsEl.innerHTML =
+                    blocks ||
+                    '<div class="empty-box"><strong>No matches</strong>Clear the search box or choose All departments, then try again.</div>';
+                updateSummary();
+                markActiveDeptInNav();
+            }
+
+            if (deptSelect) {
+                deptSelect.addEventListener("change", function () {
+                    const v = this.value;
+                    if (v === "__all__") {
+                        activeDept = "__all__";
+                    } else {
+                        const i = parseInt(v, 10);
+                        activeDept = data[i] ? data[i].title : "__all__";
+                    }
+                    renderDoctors();
+                    updateDeptTriggerLabel();
+                    markActiveDeptInNav();
+                });
+            }
+
+            if (searchEl) {
+                searchEl.addEventListener("input", function () {
+                    searchText = this.value.trim().toLowerCase();
+                    renderDoctors();
+                });
+            }
+
+            function updateHeroStats() {
+                const wrap = document.getElementById("doctorHeroStats");
+                const nDoc = document.getElementById("statDoctors");
+                const nDept = document.getElementById("statDepts");
+                if (!wrap || !nDoc || !nDept) return;
+                if (!data.length) {
+                    wrap.hidden = true;
+                    return;
+                }
+                let total = 0;
+                data.forEach(function (d) {
+                    total += d.doctors.length;
+                });
+                nDoc.textContent = total;
+                nDept.textContent = data.length;
+                wrap.hidden = false;
+            }
+
+            function applyLoadedData(sourceLabel) {
+                activeDept = "__all__";
+                renderDeptSelect();
+                renderDepartmentMenus();
+                renderDoctors();
+                updateHeroStats();
+                const srcNote =
+                    sourceLabel === "local"
+                        ? "Doctor list loaded from on-site data (aligned with the hospital doctors page). "
+                        : "Doctor list loaded from a live mirror. ";
+                statusEl.innerHTML =
+                    srcNote +
+                    'Updates may appear first on the <a href="' +
+                    sourceUrl +
+                    '" target="_blank" rel="noopener noreferrer">official doctors page</a>.';
+            }
+
+            function showDoctorLoadFailure() {
+                data = [];
+                updateHeroStats();
+                var fileHint =
+                    window.location.protocol === "file:"
+                        ? "<br><br><strong>Tip:</strong> Browsers usually block loading data files from disk (<code>file://</code>). Serve this folder over HTTP (for example VS Code Live Server, or run <code>npx --yes serve .</code> in the project folder) and open <code>doctor.html</code> from that address."
+                        : "";
+                statusEl.innerHTML =
+                    "We could not load the doctor list from <code>assets/data/doctors-page.md</code> or the online mirror. Check your connection, confirm the data file exists, then refresh. You can still browse the " +
+                    '<a href="' +
+                    sourceUrl +
+                    '" target="_blank" rel="noopener noreferrer">official doctors page</a>.' +
+                    fileHint;
+                resultSummaryEl.hidden = true;
+                setDepartmentMenusError();
+                resultsEl.innerHTML =
+                    '<div class="empty-box"><strong>Something went wrong</strong>Copy <code>assets/data/doctors-page.md</code> into this project or open the official link above.</div>';
+            }
+
+            fetch(localDataHref, { cache: "no-store", credentials: "omit" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("no local");
+                    return res.text();
+                })
+                .then(function (raw) {
+                    var parsed = parseDoctors(raw);
+                    if (!parsed.length) throw new Error("empty local parse");
+                    data = parsed;
+                    applyLoadedData("local");
+                })
+                .catch(function () {
+                    return fetch(mirrorUrl, { cache: "no-store", credentials: "omit" })
+                        .then(function (res) {
+                            if (!res.ok) throw new Error("mirror");
+                            return res.text();
+                        })
+                        .then(function (raw) {
+                            var parsed = parseDoctors(raw);
+                            if (!parsed.length) throw new Error("empty mirror parse");
+                            data = parsed;
+                            applyLoadedData("mirror");
+                        });
+                })
+                .catch(function () {
+                    showDoctorLoadFailure();
+                });
+        })();
+    </script>
+    <script>
+        (function () {
+            if (!document.body.classList.contains("doctor-page")) return;
+            function updateSubbarStickyTop() {
+                var wrap = document.querySelector(".doctor-page .sticky-wrap");
+                var inner = document.querySelector(".doctor-page .sticky-active");
+                if (!wrap || !inner) return;
+                var fixed = wrap.classList.contains("will-sticky") && inner.classList.contains("active");
+                var h = fixed ? inner.getBoundingClientRect().height : 0;
+                document.documentElement.style.setProperty("--sum-doc-subbar-top", Math.round(h) + "px");
+            }
+            window.addEventListener("scroll", updateSubbarStickyTop, { passive: true });
+            window.addEventListener("resize", updateSubbarStickyTop);
+            window.addEventListener("orientationchange", updateSubbarStickyTop);
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", updateSubbarStickyTop);
+            } else {
+                updateSubbarStickyTop();
+            }
+            window.addEventListener("load", updateSubbarStickyTop);
+        })();
+    </script>
 </body>
-
 </html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Doctor Profile | SUM Ultimate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --sum-primary: #11325f;
+            --sum-primary-2: #1f4f91;
+            --sum-text: #0f172a;
+            --sum-muted: #475569;
+        }
+        body {
+            background: radial-gradient(circle at top right, #eaf2ff 0%, #f7fafe 38%, #f5f8fc 100%);
+            color: var(--sum-text);
+        }
+        .profile-shell {
+            padding: clamp(28px, 5vw, 52px) 0 clamp(42px, 8vw, 72px);
+        }
+        .profile-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .profile-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            font-weight: 700;
+            color: var(--sum-primary);
+            text-decoration: none;
+        }
+        .profile-card {
+            border-radius: 22px;
+            background: #fff;
+            border: 1px solid rgba(17, 50, 95, 0.12);
+            box-shadow: 0 20px 46px rgba(17, 50, 95, 0.1);
+            overflow: hidden;
+        }
+        .profile-card__head {
+            padding: clamp(20px, 4vw, 28px);
+            background: linear-gradient(145deg, #0f2749 0%, #11325f 42%, #1f4f91 100%);
+            color: #fff;
+        }
+        .profile-dept {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0 0 10px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.26);
+        }
+        .profile-name {
+            margin: 0;
+            font-size: clamp(1.35rem, 3.5vw, 2rem);
+            font-weight: 800;
+            line-height: 1.25;
+        }
+        .profile-card__body {
+            padding: clamp(18px, 4vw, 28px);
+        }
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .profile-meta-item {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #1e293b;
+            background: #f1f5f9;
+            border: 1px solid rgba(17, 50, 95, 0.1);
+        }
+        .profile-meta-item i {
+            color: #1f4f91;
+            margin-top: 2px;
+        }
+        .profile-bio {
+            margin: 0;
+            line-height: 1.75;
+            font-size: 1rem;
+            color: #334155;
+            white-space: pre-wrap;
+        }
+        .profile-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(17, 50, 95, 0.1);
+        }
+        .profile-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none !important;
+        }
+        .profile-actions .book {
+            background: linear-gradient(135deg, #11325f, #1f4f91);
+            color: #fff !important;
+        }
+        .profile-actions .call {
+            border: 1px solid rgba(17, 50, 95, 0.24);
+            color: var(--sum-primary) !important;
+            background: #fff;
+        }
+        .profile-empty {
+            border-radius: 16px;
+            border: 1px solid rgba(17, 50, 95, 0.14);
+            background: #fff;
+            padding: 28px 20px;
+            text-align: center;
+            color: #475569;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="profile-shell">
+        <div class="profile-wrap">
+            <a class="profile-back" href="doctor.html"><i class="fas fa-arrow-left"></i> Back to doctors list</a>
+            <div id="profileMount" class="profile-empty">Loading profile…</div>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const sourceUrl = "https://sumum.soahospitals.com/doctors-page/";
+            const mirrorUrl = "https://r.jina.ai/http://sumum.soahospitals.com/doctors-page/";
+            const localDataHref = new URL("assets/data/doctors-page.md", window.location.href).href;
+            const apptUrl = "https://appt.soahospitals.com/";
+            const mount = document.getElementById("profileMount");
+
+            function escHtml(str) {
+                return String(str)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+
+            function metaIcon(line) {
+                const t = String(line).toLowerCase();
+                if (/availability|consult|hod|department/i.test(t)) return "fa-user-md";
+                if (/mbbs|md|dm|qualification|fellow|f\.?r\.?c\.?s/i.test(t)) return "fa-graduation-cap";
+                return "fa-award";
+            }
+
+            function normDoctorName(str) {
+                return String(str).replace(/\s+/g, " ").trim().toLowerCase();
+            }
+
+            function isProbableDoctorNameLine(clean) {
+                if (/^\(Prof\)\s*Dr\.?|^Prof\.?\s*Dr\.?/i.test(clean)) return true;
+                if (!/^Dr\.?\s+/i.test(clean)) return false;
+                if (clean.length > 95) return false;
+                const wc = clean.split(/\s+/).length;
+                if (wc > 12) return false;
+                if (/\b(has|had|is|was|completed|experience|career|member|actively|extensive)\b/i.test(clean)) return false;
+                if (/,\s*(Senior|Consultant|Department|MD|MBBS|MS|DM|DNB|PDF|Fellow)/i.test(clean)) return false;
+                return true;
+            }
+
+            function parseDoctors(rawText) {
+                const text = String(rawText).replace(/^\uFEFF/, "");
+                const allLines = text.split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
+                let start = 0;
+                for (let i = 0; i < allLines.length; i++) {
+                    if (/^#####\s+/.test(allLines[i])) {
+                        start = i;
+                        break;
+                    }
+                }
+                const lines = allLines.slice(start);
+                const departments = [];
+                let dept = null;
+                let doc = null;
+
+                function pushDoc() {
+                    if (dept && doc && doc.name) dept.doctors.push(doc);
+                    doc = null;
+                }
+                function pushDept() {
+                    pushDoc();
+                    if (dept && dept.title) departments.push(dept);
+                }
+
+                for (const line of lines) {
+                    if (/^######/.test(line)) continue;
+                    if (/^####\s+Dr/i.test(line)) continue;
+                    if (/^####\s+\[Dr\.?/i.test(line)) continue;
+                    if (/^####\s+\[\(Prof\.\)\s*Dr\.?/i.test(line)) continue;
+                    if (/^!\[/.test(line.trim())) continue;
+
+                    const clean = line.replace(/^#+\s*/, "").trim();
+                    if (
+                        /^Source URL:/i.test(clean) ||
+                        /^Title:/i.test(clean) ||
+                        /^URL Source:/i.test(clean) ||
+                        /^Markdown Content:/i.test(clean) ||
+                        clean === "×" ||
+                        /^GET AN APPOINTMENT!?$/i.test(clean)
+                    ) {
+                        continue;
+                    }
+
+                    if (/^#####\s+/.test(line)) {
+                        const candidate = clean.replace(/\s+/g, " ").trim();
+                        if (candidate && !/^Dr\.?/i.test(candidate) && !/^Availability/i.test(candidate)) {
+                            pushDept();
+                            dept = { title: candidate, doctors: [] };
+                            continue;
+                        }
+                    }
+
+                    if (isProbableDoctorNameLine(clean)) {
+                        pushDoc();
+                        if (!dept) dept = { title: "Doctors", doctors: [] };
+                        doc = { name: clean, meta: [], body: [] };
+                        continue;
+                    }
+
+                    if (!dept) dept = { title: "Doctors", doctors: [] };
+                    if (!doc) doc = { name: "Doctor Profile", meta: [], body: [] };
+
+                    if (
+                        /^Availability/i.test(clean) ||
+                        /^Consultant/i.test(clean) ||
+                        /^Senior Consultant/i.test(clean) ||
+                        /^Sr\.?\s*Consultant/i.test(clean) ||
+                        /^HOD/i.test(clean) ||
+                        /^Head\b/i.test(clean) ||
+                        /^Department\b/i.test(clean) ||
+                        /^MBBS/i.test(clean) ||
+                        /^Qualifications?/i.test(clean) ||
+                        /^MD\b/i.test(clean) ||
+                        /^DM\b/i.test(clean) ||
+                        /^DNB/i.test(clean) ||
+                        /^MS\b/i.test(clean) ||
+                        /^MCh/i.test(clean) ||
+                        /^PDF\b/i.test(clean) ||
+                        /^FRCS/i.test(clean) ||
+                        /^MRCP/i.test(clean) ||
+                        /^Fellow/i.test(clean)
+                    ) {
+                        doc.meta.push(clean);
+                    } else {
+                        doc.body.push(clean);
+                    }
+                }
+                pushDept();
+                return departments.filter((d) => d.doctors.length > 0);
+            }
+
+            function renderNotFound() {
+                mount.innerHTML =
+                    '<div class="profile-empty"><strong>Profile not found.</strong><br>Open from the doctors page and try again.<br><br><a href="doctor.html">Go to doctors list</a></div>';
+            }
+
+            function renderProfile(deptTitle, doc) {
+                const tags = doc.meta.map(function (line) {
+                    return (
+                        '<span class="profile-meta-item"><i class="fas ' +
+                        metaIcon(line) +
+                        '" aria-hidden="true"></i>' +
+                        escHtml(line) +
+                        "</span>"
+                    );
+                }).join("");
+                const bio = escHtml(doc.body.join("\n").trim() || "Details will be updated soon.");
+                mount.className = "profile-card";
+                mount.innerHTML =
+                    '<div class="profile-card__head">' +
+                    '<p class="profile-dept"><i class="fas fa-stethoscope" aria-hidden="true"></i> ' + escHtml(deptTitle) + "</p>" +
+                    '<h1 class="profile-name">' + escHtml(doc.name) + "</h1>" +
+                    "</div>" +
+                    '<div class="profile-card__body">' +
+                    (tags ? '<div class="profile-meta">' + tags + "</div>" : "") +
+                    '<p class="profile-bio">' + bio + "</p>" +
+                    '<div class="profile-actions">' +
+                    '<a class="book" href="' + apptUrl + '" target="_blank" rel="noopener noreferrer"><i class="fal fa-calendar-check"></i> Book appointment</a>' +
+                    '<a class="call" href="tel:+916743500500"><i class="fas fa-phone-alt"></i> Call hospital</a>' +
+                    "</div></div>";
+            }
+
+            function findDoctor(data, name, dept) {
+                const wantedName = normDoctorName(name);
+                const wantedDept = normDoctorName(dept || "");
+                for (let i = 0; i < data.length; i++) {
+                    if (wantedDept && normDoctorName(data[i].title) !== wantedDept) continue;
+                    for (let j = 0; j < data[i].doctors.length; j++) {
+                        const d = data[i].doctors[j];
+                        if (normDoctorName(d.name) === wantedName) return { dept: data[i].title, doc: d };
+                    }
+                }
+                for (let i = 0; i < data.length; i++) {
+                    for (let j = 0; j < data[i].doctors.length; j++) {
+                        const d = data[i].doctors[j];
+                        if (normDoctorName(d.name) === wantedName) return { dept: data[i].title, doc: d };
+                    }
+                }
+                return null;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const doctorName = params.get("name");
+            const deptName = params.get("dept") || "";
+            if (!doctorName) {
+                renderNotFound();
+                return;
+            }
+
+            fetch(localDataHref, { cache: "no-store", credentials: "omit" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("no local");
+                    return res.text();
+                })
+                .then(function (raw) {
+                    const parsed = parseDoctors(raw);
+                    if (!parsed.length) throw new Error("empty local parse");
+                    const found = findDoctor(parsed, doctorName, deptName);
+                    if (!found) {
+                        renderNotFound();
+                        return;
+                    }
+                    renderProfile(found.dept, found.doc);
+                })
+                .catch(function () {
+                    fetch(mirrorUrl, { cache: "no-store", credentials: "omit" })
+                        .then(function (res) {
+                            if (!res.ok) throw new Error("no mirror");
+                            return res.text();
+                        })
+                        .then(function (raw) {
+                            const parsed = parseDoctors(raw);
+                            const found = findDoctor(parsed, doctorName, deptName);
+                            if (!found) {
+                                renderNotFound();
+                                return;
+                            }
+                            renderProfile(found.dept, found.doc);
+                        })
+                        .catch(function () {
+                            mount.innerHTML =
+                                '<div class="profile-empty">Could not load profile data right now. <a href="' +
+                                sourceUrl +
+                                '" target="_blank" rel="noopener noreferrer">Open official doctors page</a></div>';
+                        });
+                });
+        })();
+    </script>
+</body>
+</html>

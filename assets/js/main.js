@@ -36,9 +36,20 @@
 /*
 
   /*---------- 01. On Load Function ----------*/
-  $(window).on('load', function () {
-    $('.preloader').fadeOut();
+  var hasPreloaderHidden = false;
+  function hidePreloader() {
+    if (hasPreloaderHidden) return;
+    hasPreloaderHidden = true;
+    $('.preloader').fadeOut(180);
+  }
+
+  // Show page content as soon as DOM is ready, not after all assets download.
+  $(function () {
+    setTimeout(hidePreloader, 150);
   });
+
+  // Keep a fallback for very slow DOM-ready edge cases.
+  $(window).on('load', hidePreloader);
 
 
 
@@ -148,24 +159,26 @@
   var lastScrollTop = '';
   var scrollToTopBtn = '.scrollToTop'
 
+  /* Sticky header: all pages with .sticky-active — show fixed bar after a small scroll, stay visible (no hide-on-scroll-down). */
+  var stickyRevealPx = 72;
   function stickyMenu($targetMenu, $toggleClass, $parentClass) {
     var st = $(window).scrollTop();
-    var height = $targetMenu.css('height');
-    $targetMenu.parent().css('min-height', height);
-    if ($(window).scrollTop() > 800) {
-      $targetMenu.parent().addClass($parentClass);
-
-      if (st > lastScrollTop) {
-        $targetMenu.removeClass($toggleClass);
+    $targetMenu.each(function () {
+      var $el = $(this);
+      var $wrap = $el.parent();
+      var h = $el.outerHeight();
+      if (st > stickyRevealPx) {
+        $wrap.css('min-height', h ? h + 'px' : '');
+        $wrap.addClass($parentClass);
+        $el.addClass($toggleClass);
       } else {
-        $targetMenu.addClass($toggleClass);
-      };
-    } else {
-      $targetMenu.parent().css('min-height', '').removeClass($parentClass);
-      $targetMenu.removeClass($toggleClass);
-    };
+        $wrap.css('min-height', '');
+        $wrap.removeClass($parentClass);
+        $el.removeClass($toggleClass);
+      }
+    });
     lastScrollTop = st;
-  };
+  }
   $(window).on("scroll", function () {
     stickyMenu($('.sticky-active'), "active", "will-sticky");
     if ($(this).scrollTop() > 500) {
@@ -174,8 +187,10 @@
       $(scrollToTopBtn).removeClass('show');
     }
   });
-
-
+  $(window).on("load resize", function () {
+    stickyMenu($('.sticky-active'), "active", "will-sticky");
+  });
+  stickyMenu($('.sticky-active'), "active", "will-sticky");
 
   /*---------- 05. Scroll To Top ----------*/
   $(scrollToTopBtn).each(function () {
@@ -968,15 +983,34 @@ if($dataV >= 51){
     dots: false
     }).slickAnimation();
 
-  $('.banner-slide-eight').slick({
-    autoplay: false,
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    arrows: false,
-    draggable:true,
-    dots: true,
-    appendDots: $('#slidenav3')
-    }).slickAnimation();
+  var $bannerEight = $('.banner-slide-eight');
+  if ($bannerEight.length) {
+    var heroOpts = {
+      autoplay: true,
+      autoplaySpeed: 6500,
+      speed: 900,
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      arrows: false,
+      draggable: true,
+      swipe: true,
+      touchThreshold: 12,
+      dots: true,
+      appendDots: $('#slidenav3')
+    };
+    if ($('#sumHeroArrows').length) {
+      heroOpts.arrows = true;
+      heroOpts.appendArrows = $('#sumHeroArrows');
+      heroOpts.prevArrow = '<button type="button" class="slick-prev sum-hero-slick-arrow" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>';
+      heroOpts.nextArrow = '<button type="button" class="slick-next sum-hero-slick-arrow" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>';
+    }
+    $bannerEight.slick(heroOpts).slickAnimation();
+  }
 
   $('.testi-slider').slick({
     dots: false,
