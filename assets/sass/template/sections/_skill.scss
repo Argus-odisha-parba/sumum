@@ -90,7 +90,7 @@
   .percent_more .circle_inner {clip:rect(0 .5em 1em 0em);}
   .percent_more:after {position: absolute; left: .5em; top:0em; right: 0; bottom: 0; background: var(--theme-color4); content:'';}
   .circle_inbox {position: absolute; top: 6px;width: 198px; height: 198px; left: 6px; right: 10px; bottom: 10px; background: #fff; z-index:3; border-radius: 50%;}
-  .percent_text {position: absolute; margin-top: -19px; font-size: 60px; font-weight: 700; font-family: var(--title-font); color: #07ccec; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 3;}
+  .percent_text {position: absolute; margin-top: -19px; font-size: 60px; font-weight: 700; font-family: var(--title-font); color: #309c5a; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 3;}
 }
 .skill-img{
   position: relative;

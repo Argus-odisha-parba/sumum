@@ -43,7 +43,7 @@
       margin-top: calc(var(--icon-shape) / -2);
       background-color: $white-color;
       border-radius: 50%;
-      box-shadow: inset 0px 5px 5px 0px rgba(#07ccec, 0.3);
+      box-shadow: inset 0px 5px 5px 0px rgba(#309c5a, 0.3);
       transition: inherit;
     }
 
@@ -80,7 +80,7 @@
     background-color: $theme-color;
 
     &:before {
-      box-shadow: inset 0px 5px 5px 0px rgba(#07ccec, 0.3);
+      box-shadow: inset 0px 5px 5px 0px rgba(#309c5a, 0.3);
     }
 
     i {
@@ -252,7 +252,7 @@
 
   &.style3 {
     i{
-      background-color: rgba(#07ccec, 0.20);
+      background-color: rgba(#309c5a, 0.20);
       color: $title-color;
       box-shadow: none;
     }
@@ -524,7 +524,7 @@
     height: 70px;
     background-color: $white-color;
     color: $theme-color;
-    border: 4px solid rgba(#07ccec, 0.3);
+    border: 4px solid rgba(#309c5a, 0.3);
     display: inline-block;
     text-align: center;
     line-height: 65px;
@@ -705,7 +705,7 @@
   font-size: 16px;
   color: var(--white-color);
   font-weight: 700;
-  background: #07CCEC;
+  background: #309c5a;
   display: inline-block;
   height: 51px;
   line-height: 51px;
@@ -721,14 +721,14 @@
   font-weight: 700;
   line-height: 56px;
   border-radius: 5px 50px 5px 5px;
-  background: #07ccec;
+  background: #309c5a;
   height: 56px;
   padding: 0 51px 0 37px;
   display: inline-block;
   border:1px solid transparent;
   &:hover {
     background-color: #fff;
-    border-color: #07ccec;
-    color: #07ccec;
+    border-color: #309c5a;
+    color: #309c5a;
   }
 }

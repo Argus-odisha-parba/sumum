@@ -546,7 +546,7 @@
     }
   }
   span{
-    color: #07CCEC;
+    color: #309c5a;
     font-size: 20px;
     font-weight: 700;
     line-height: normal;
@@ -807,7 +807,7 @@
     font-weight: 700;
     line-height: normal;
     &:hover{
-      background-color: #07ccec;
+      background-color: #309c5a;
       i{
         color: var(--white-color);
       }
@@ -821,7 +821,7 @@
     }
   }
   .nav-link.active{
-    background-color: #07ccec;
+    background-color: #309c5a;
     i{
       color: var(--white-color);
     }
@@ -897,7 +897,7 @@
       line-height: 124.044px;
       text-align: center;
       border-radius: 50%;
-      background-color: #07ccec;
+      background-color: #309c5a;
       border-radius: 50%;
       &::before{
         content: "\f067";
@@ -937,7 +937,7 @@
       width: 14px;
       height: 14px;
       border-radius: 50px;
-      background-color: #07ccec;
+      background-color: #309c5a;
     }
   }
 }
@@ -948,7 +948,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
-  border-bottom: 2px solid #07ccec;
+  border-bottom: 2px solid #309c5a;
 }
 
 
@@ -982,7 +982,7 @@
     left: 0;
     width: 100%;
     height: 6px;
-    background-color: #07ccec;
+    background-color: #309c5a;
     border-radius: 10px;
   }
   @include md{
@@ -1720,7 +1720,7 @@
       display: none;
     }
     &:hover {
-      border-color: #07CCEC;
+      border-color: #309c5a;
       background-color: transparent;
       &:before {
         background-image: url(../img/clr-icon.png);

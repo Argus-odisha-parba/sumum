@@ -559,7 +559,7 @@
             }
         }
 
-        /* Doctor sub-header: department (left) + compact search — sticky below fixed header */
+        /* Doctor sub-header: department filter — sticky below fixed header */
         .sum-doctor-subbar {
             position: -webkit-sticky;
             position: sticky;
@@ -577,26 +577,11 @@
         }
         .sum-doctor-subbar__inner {
             display: grid;
-            grid-template-columns: minmax(180px, min(34vw, 300px)) minmax(0, 1fr);
+            grid-template-columns: minmax(220px, min(40vw, 360px));
             gap: clamp(10px, 2vw, 16px) clamp(12px, 2vw, 18px);
             -webkit-box-align: end;
                 -ms-flex-align: end;
                     align-items: end;
-        }
-        .sum-doctor-subbar .doctor-search {
-            min-height: 40px;
-            padding: 8px 11px 8px 34px;
-            font-size: 0.875rem;
-            border-radius: 10px;
-        }
-        .sum-doctor-subbar .doctor-search-icon {
-            left: 11px;
-            font-size: 0.875rem;
-        }
-        .sum-doctor-subbar__hint {
-            font-size: 0.75rem;
-            line-height: 1.35;
-            max-width: 42ch;
         }
         .sum-doctor-subbar .sum-doctor-subbar__label {
             font-size: 0.8125rem;
@@ -604,10 +589,6 @@
         }
         .sum-doctor-subbar__label {
             margin-bottom: 6px;
-        }
-        .sum-doctor-subbar__hint {
-            margin-top: 6px;
-            margin-bottom: 0;
         }
         .sum-doctor-subbar__dept-wrap {
             position: relative;
@@ -1240,7 +1221,7 @@
         </div>
     </section>
 
-    <section class="sum-doctor-subbar" id="sumDoctorSubbar" aria-label="Search and filter by department">
+    <section class="sum-doctor-subbar" id="sumDoctorSubbar" aria-label="Filter by department">
         <div class="container-style8">
             <div class="sum-doctor-subbar__inner">
                 <div class="sum-doctor-subbar__dept-wrap sum-dept-subbar-wrap" id="deptSubbarWrap">
@@ -1255,14 +1236,6 @@
                     <select id="deptSelect" class="sum-dept-select-sync" title="Department filter" aria-hidden="true" tabindex="-1">
                         <option value="__all__">All departments</option>
                     </select>
-                </div>
-                <div class="sum-doctor-subbar__search doctor-field">
-                    <label for="doctorSearch" class="doctor-label sum-doctor-subbar__label">Search</label>
-                    <div class="doctor-search-wrap">
-                        <span class="doctor-search-icon" aria-hidden="true"><i class="fas fa-search"></i></span>
-                        <input id="doctorSearch" class="doctor-search" type="search" inputmode="search" autocomplete="off" placeholder="Search by name or specialty" aria-describedby="doctorSearchHint">
-                    </div>
-                    <p id="doctorSearchHint" class="doctor-hint sum-doctor-subbar__hint">Results update as you type. Clear the box to see everyone again.</p>
                 </div>
             </div>
         </div>

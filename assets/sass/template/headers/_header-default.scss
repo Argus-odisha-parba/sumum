@@ -182,7 +182,7 @@
           color: $theme-color;
           font-weight: 700;
           background-color: $white-color;
-          box-shadow: inset 0px 2px 4px 0px rgba(#07ccec, 0.40);
+          box-shadow: inset 0px 2px 4px 0px rgba(#309c5a, 0.40);
         }
 
 
@@ -1073,7 +1073,7 @@
   height: 50px;
   line-height: 50px;
   padding: 0 30px;
-  background-color: #07CCEC;
+  background-color: #309c5a;
   display: inline-block;
   margin-left: 0;
   &:before {
@@ -1101,7 +1101,7 @@
     border-radius: 50%;
     transition: all 0.3s ease;
     &:hover{
-      background: #07CCEC;
+      background: #309c5a;
     }
   }
   span{
@@ -1111,7 +1111,7 @@
     font-size: 12px;
     display: inline-block;
     color: var(--white-color);
-    background-color: #07CCEC;
+    background-color: #309c5a;
     border-radius: 10px;
     text-transform: uppercase;
     width: 18px;
@@ -1203,7 +1203,7 @@
     font-size: 20px;
     color: var(--white-color);
     font-weight: 700;
-    background: #07CCEC;
+    background: #309c5a;
     display: inline-block;
     height: 60px;
     line-height: 60px;
@@ -1367,7 +1367,7 @@
     font-size: 12px;
     display: inline-block;
     color: var(--white-color);
-    background-color: #07CCEC;
+    background-color: #309c5a;
     border-radius: 10px;
     text-transform: uppercase;
     width: 18px;
