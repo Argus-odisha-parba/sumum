@@ -1,0 +1,3 @@
+<Files "admin-config.php">
+    Require all denied
+</Files>

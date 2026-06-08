@@ -1,0 +1,164 @@
+[
+    {
+        "id": "gallery-advanced-diagnostics-wing",
+        "title": "Advanced diagnostics wing",
+        "image": "assets/img/service/ser9-2.jpg",
+        "category": "technology",
+        "featured": true,
+        "priority": 100,
+        "active": true
+    },
+    {
+        "id": "gallery-patient-centric-care-environment",
+        "title": "Patient-centric care environment",
+        "image": "assets/img/blog/b-8-1.jpg",
+        "category": "clinical",
+        "featured": true,
+        "priority": 95,
+        "active": true
+    },
+    {
+        "id": "gallery-sum-ultimate-medicare-campus",
+        "title": "SUM Ultimate Medicare campus",
+        "image": "assets/img/hero/h-bg-8-1.jpg",
+        "category": "hospital",
+        "featured": true,
+        "priority": 90,
+        "active": true
+    },
+    {
+        "id": "gallery-modern-operating-theatres",
+        "title": "Modern operating theatres",
+        "image": "assets/img/service/ser9-3.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 85,
+        "active": true
+    },
+    {
+        "id": "gallery-critical-care-unit",
+        "title": "Critical care unit",
+        "image": "assets/img/service/ser9-4.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 80,
+        "active": true
+    },
+    {
+        "id": "gallery-outpatient-consultation-area",
+        "title": "Outpatient consultation area",
+        "image": "assets/img/service/ser8-1.jpg",
+        "category": "hospital",
+        "featured": false,
+        "priority": 75,
+        "active": true
+    },
+    {
+        "id": "gallery-specialty-clinic-corridor",
+        "title": "Specialty clinic corridor",
+        "image": "assets/img/service/ser8-3.jpg",
+        "category": "hospital",
+        "featured": false,
+        "priority": 70,
+        "active": true
+    },
+    {
+        "id": "gallery-imaging-radiology-suite",
+        "title": "Imaging & radiology suite",
+        "image": "assets/img/service/ser9-5.jpg",
+        "category": "technology",
+        "featured": false,
+        "priority": 65,
+        "active": true
+    },
+    {
+        "id": "gallery-laboratory-services",
+        "title": "Laboratory services",
+        "image": "assets/img/service/ser9-6.jpg",
+        "category": "technology",
+        "featured": false,
+        "priority": 60,
+        "active": true
+    },
+    {
+        "id": "gallery-rehabilitation-recovery",
+        "title": "Rehabilitation & recovery",
+        "image": "assets/img/blog/b-8-2.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 55,
+        "active": true
+    },
+    {
+        "id": "gallery-community-health-outreach",
+        "title": "Community health outreach",
+        "image": "assets/img/blog/b-8-3.jpg",
+        "category": "events",
+        "featured": false,
+        "priority": 50,
+        "active": true
+    },
+    {
+        "id": "gallery-hospital-reception-lobby",
+        "title": "Hospital reception & lobby",
+        "image": "assets/img/widget/footer8-1.jpg",
+        "category": "hospital",
+        "featured": false,
+        "priority": 45,
+        "active": true
+    },
+    {
+        "id": "gallery-patient-waiting-lounge",
+        "title": "Patient waiting lounge",
+        "image": "assets/img/widget/footer8-2.jpg",
+        "category": "hospital",
+        "featured": false,
+        "priority": 40,
+        "active": true
+    },
+    {
+        "id": "gallery-clinical-excellence-in-action",
+        "title": "Clinical excellence in action",
+        "image": "assets/img/bg/why-choose1-1.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 35,
+        "active": true
+    },
+    {
+        "id": "gallery-health-awareness-camp",
+        "title": "Health awareness camp",
+        "image": "assets/img/bg/specialist1-1.jpg",
+        "category": "events",
+        "featured": false,
+        "priority": 30,
+        "active": true
+    },
+    {
+        "id": "gallery-nursing-patient-support",
+        "title": "Nursing & patient support",
+        "image": "assets/img/service/ser8-5.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 25,
+        "active": true
+    },
+    {
+        "id": "gallery-emergency-trauma-bay",
+        "title": "Emergency & trauma bay",
+        "image": "assets/img/service/ser8-6.jpg",
+        "category": "clinical",
+        "featured": false,
+        "priority": 20,
+        "active": true
+    },
+    {
+        "id": "gallery-medical-education-training",
+        "title": "Medical education & training",
+        "image": "assets/img/bg/cta-bg-1-1.jpg",
+        "category": "events",
+        "featured": false,
+        "priority": 15,
+        "active": true
+    }
+]

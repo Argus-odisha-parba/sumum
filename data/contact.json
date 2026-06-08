@@ -1,0 +1,17 @@
+{
+    "email": "sumum_bbsr@soahospitals.com",
+    "epabx_display": "+91 0674 3 500 500",
+    "epabx_tel": "+916743500500",
+    "ambulance_display": "+91 0674 266 1111",
+    "ambulance_tel": "+916742661111",
+    "address": "K-8, Kalinga Nagar, Ghatikia,\nBhubaneswar, 751003, Odisha",
+    "address_short": "K-8, Kalinga Nagar, Bhubaneswar 751003",
+    "map_url": "https://goo.gl/maps/Eub6yxPCTxFu5UZx7",
+    "hours_weekdays": "8:00 am - 8:00 pm",
+    "hours_saturday": "9:00 am - 6:00 pm",
+    "hours_sunday": "9:00 am - 6:00 pm",
+    "hours_summary": "Mon – Sun 08:00 – 18:00",
+    "hours_compact": "08:00 – 18:00",
+    "contact_intro": "Reach us for appointments, support, and emergency assistance.",
+    "appointment_url": "https://appt.soahospitals.com/"
+}

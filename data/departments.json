@@ -1,0 +1,79 @@
+[
+    {
+        "id": "cardiology",
+        "name": "Cardiology",
+        "overview": "",
+        "priority": 100,
+        "active": true
+    },
+    {
+        "id": "neurology",
+        "name": "Neurology",
+        "overview": "",
+        "priority": 95,
+        "active": true
+    },
+    {
+        "id": "nephrology",
+        "name": "Nephrology",
+        "overview": "",
+        "priority": 90,
+        "active": true
+    },
+    {
+        "id": "orthopedics",
+        "name": "Orthopedics",
+        "overview": "",
+        "priority": 85,
+        "active": true
+    },
+    {
+        "id": "pulmonology",
+        "name": "Pulmonology",
+        "overview": "",
+        "priority": 80,
+        "active": true
+    },
+    {
+        "id": "gastroenterology",
+        "name": "Gastroenterology",
+        "overview": "",
+        "priority": 75,
+        "active": true
+    },
+    {
+        "id": "oncology",
+        "name": "Oncology",
+        "overview": "",
+        "priority": 70,
+        "active": true
+    },
+    {
+        "id": "urology",
+        "name": "Urology",
+        "overview": "",
+        "priority": 65,
+        "active": true
+    },
+    {
+        "id": "general-medicine",
+        "name": "General Medicine",
+        "overview": "",
+        "priority": 60,
+        "active": true
+    },
+    {
+        "id": "critical-care",
+        "name": "Critical Care",
+        "overview": "",
+        "priority": 55,
+        "active": true
+    },
+    {
+        "id": "emergency-medicine",
+        "name": "Emergency Medicine",
+        "overview": "",
+        "priority": 50,
+        "active": true
+    }
+]

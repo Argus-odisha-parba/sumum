@@ -1003,11 +1003,11 @@ if($dataV >= 51){
       dots: true,
       appendDots: $('#slidenav3')
     };
-    if ($('#sumHeroArrows').length) {
+    if ($('#sumHeroSideArrows').length) {
       heroOpts.arrows = true;
-      heroOpts.appendArrows = $('#sumHeroArrows');
-      heroOpts.prevArrow = '<button type="button" class="slick-prev sum-hero-slick-arrow" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>';
-      heroOpts.nextArrow = '<button type="button" class="slick-next sum-hero-slick-arrow" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>';
+      heroOpts.appendArrows = $('#sumHeroSideArrows');
+      heroOpts.prevArrow = '<button type="button" class="slick-prev sum-hero-slick-arrow sum-hero-slick-arrow--side" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>';
+      heroOpts.nextArrow = '<button type="button" class="slick-next sum-hero-slick-arrow sum-hero-slick-arrow--side" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>';
     }
     $bannerEight.slick(heroOpts).slickAnimation();
   }
@@ -1030,6 +1030,29 @@ if($dataV >= 51){
     appendDots: $('#slidenav4'),
     slidesToScroll: 1
   });
+
+  if ($('.sum-dept-browse__slider').length && !$('.sum-dept-browse__slider').hasClass('slick-initialized')) {
+    $('.sum-dept-browse__slider').slick({
+      dots: false,
+      arrows: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 4500,
+      speed: 600,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      pauseOnHover: true,
+      prevArrow: '<button type="button" class="sum-dept-slider-arrow prev" aria-label="Previous departments"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>',
+      nextArrow: '<button type="button" class="sum-dept-slider-arrow next" aria-label="Next departments"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>',
+      appendArrows: '#sumDeptSliderNav',
+      responsive: [
+        { breakpoint: 1400, settings: { slidesToShow: 3 } },
+        { breakpoint: 1200, settings: { slidesToShow: 3 } },
+        { breakpoint: 992, settings: { slidesToShow: 2 } },
+        { breakpoint: 576, settings: { slidesToShow: 1 } }
+      ]
+    });
+  }
 
 
 

@@ -1,0 +1,122 @@
+[
+    {
+        "id": "dr-sarat-sahoo",
+        "name": "Dr. Sarat Sahoo",
+        "description": "",
+        "image": "assets/img/team/team8-1.jpg",
+        "department": "Cardiology",
+        "qualification": "DM (Cardiology)",
+        "priority": 100,
+        "active": true
+    },
+    {
+        "id": "dr-jayant-kumar-dash",
+        "name": "Dr. Jayant Kumar Dash",
+        "description": "",
+        "image": "assets/img/team/team8-2.jpg",
+        "department": "General Medicine",
+        "qualification": "MD (Medicine)",
+        "priority": 95,
+        "active": true
+    },
+    {
+        "id": "dr-manoj-patnaik",
+        "name": "Dr. Manoj Patnaik",
+        "description": "",
+        "image": "assets/img/team/drmanojchairman-1.jpeg",
+        "department": "Orthopedics",
+        "qualification": "MS (Ortho)",
+        "priority": 90,
+        "active": true
+    },
+    {
+        "id": "dr-swetha-padma",
+        "name": "Dr. Swetha Padma",
+        "description": "",
+        "image": "assets/img/team/Swethapadma-1.jpg",
+        "department": "Neurology",
+        "qualification": "DM (Neurology)",
+        "priority": 85,
+        "active": true
+    },
+    {
+        "id": "dr-biraj-mohanty",
+        "name": "Dr. Biraj Mohanty",
+        "description": "",
+        "image": "assets/img/team/biraj-1.jpg",
+        "department": "Gastroenterology",
+        "qualification": "DM (Gastro)",
+        "priority": 80,
+        "active": true
+    },
+    {
+        "id": "dr-priya-mohanty",
+        "name": "Dr. Priya Mohanty",
+        "description": "",
+        "image": "assets/img/team/team8-3.jpg",
+        "department": "Oncology",
+        "qualification": "MD (Oncology)",
+        "priority": 75,
+        "active": true
+    },
+    {
+        "id": "dr-rakesh-das",
+        "name": "Dr. Rakesh Das",
+        "description": "",
+        "image": "assets/img/team/team8-4.jpg",
+        "department": "Nephrology",
+        "qualification": "DM (Nephrology)",
+        "priority": 70,
+        "active": true
+    },
+    {
+        "id": "dr-anil-behera",
+        "name": "Dr. Anil Behera",
+        "description": "",
+        "image": "assets/img/team/team2-1.jpg",
+        "department": "Pulmonology",
+        "qualification": "MD (Pulmonary)",
+        "priority": 65,
+        "active": true
+    },
+    {
+        "id": "dr-smita-patra",
+        "name": "Dr. Smita Patra",
+        "description": "",
+        "image": "assets/img/team/t-1-1.png",
+        "department": "Urology",
+        "qualification": "MCh (Urology)",
+        "priority": 60,
+        "active": true
+    },
+    {
+        "id": "dr-rohit-nayak",
+        "name": "Dr. Rohit Nayak",
+        "description": "",
+        "image": "assets/img/team/t-1-2.png",
+        "department": "Emergency Medicine",
+        "qualification": "MD (Emergency)",
+        "priority": 55,
+        "active": true
+    },
+    {
+        "id": "dr-kiran-sahu",
+        "name": "Dr. Kiran Sahu",
+        "description": "",
+        "image": "assets/img/team/t-1-3.png",
+        "department": "Critical Care",
+        "qualification": "DM (Critical Care)",
+        "priority": 50,
+        "active": true
+    },
+    {
+        "id": "dr-meera-tripathy",
+        "name": "Dr. Meera Tripathy",
+        "description": "",
+        "image": "assets/img/team/team2-2.jpg",
+        "department": "Cardiology",
+        "qualification": "MD, DM (Cardiology)",
+        "priority": 45,
+        "active": true
+    }
+]
