@@ -21,7 +21,7 @@ include __DIR__ . '/includes/header.php';
                 <h1>Health Check Packages</h1>
                 <p class="sum-pkg-hero__intro">Early detection saves lives. Choose a curated screening package built around clinical protocols, same-day coordination, and specialist review — all under one roof at SUM Ultimate Medicare.</p>
                 <div class="sum-pkg-hero__actions">
-                    <a href="https://appt.soahospitals.com/" class="sum-pkg-hero__btn sum-pkg-hero__btn--primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book a package</a>
+                    <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="sum-pkg-hero__btn sum-pkg-hero__btn--primary"<?php echo sum_appointment_link_attrs(); ?>><i class="fas fa-calendar-check" aria-hidden="true"></i> Book a package</a>
                     <a href="tel:+916743500500" class="sum-pkg-hero__btn sum-pkg-hero__btn--outline"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call for details</a>
                 </div>
             </div>
@@ -100,7 +100,7 @@ include __DIR__ . '/includes/header.php';
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                    <a href="https://appt.soahospitals.com/" class="sum-pkg-card__btn" target="_blank" rel="noopener">
+                    <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="sum-pkg-card__btn"<?php echo sum_appointment_link_attrs(); ?>>
                         Book this package <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </article>

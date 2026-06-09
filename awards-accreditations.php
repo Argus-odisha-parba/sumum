@@ -123,7 +123,7 @@ include __DIR__ . '/includes/header.php';
                 <p>Book a consultation or speak with our team to learn how our quality systems translate into safer, better outcomes for you and your family.</p>
             </div>
             <div class="sum-hp-cta__actions">
-                <a href="https://appt.soahospitals.com/" class="sum-hp-cta__btn sum-hp-cta__btn--primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="sum-hp-cta__btn sum-hp-cta__btn--primary"<?php echo sum_appointment_link_attrs(); ?>><i class="fas fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
                 <a href="tel:+916743500500" class="sum-hp-cta__btn sum-hp-cta__btn--outline"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call us</a>
             </div>
         </div>

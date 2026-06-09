@@ -553,6 +553,66 @@
   max-width: 920px;
 }
 
+.sum-admin-kv-table {
+  border: 1px solid rgba(39, 71, 125, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.sum-admin-kv-table__head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 12px 18px;
+  background: #f3f6fa;
+  border-bottom: 1px solid rgba(39, 71, 125, 0.1);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6f86;
+}
+
+.sum-admin-kv-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(39, 71, 125, 0.08);
+}
+
+.sum-admin-kv-row:last-child {
+  border-bottom: 0;
+}
+
+.sum-admin-kv-key {
+  margin: 10px 0 0;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #27477d;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.sum-admin-kv-value input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(39, 71, 125, 0.18);
+  border-radius: 10px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92rem;
+  box-sizing: border-box;
+}
+
+.sum-admin-kv-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #6b7f96;
+}
+
 .sum-admin-empty {
   margin: 0;
   padding: 28px 0;
@@ -797,5 +857,10 @@
   .sum-admin-topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .sum-admin-kv-table__head,
+  .sum-admin-kv-row {
+    grid-template-columns: 1fr;
   }
 }

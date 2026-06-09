@@ -51,7 +51,7 @@
                                     <li><a href="https://sumum.soahospitals.com/blog/" target="_blank" rel="noopener">Blog</a></li>
                                     <li><a href="https://sumum.soahospitals.com/ultimate-gallery/" target="_blank" rel="noopener">Gallery</a></li>
                                     <li><a href="https://sumum.soahospitals.com/awards_accreditions/nabh-within-365-days/" target="_blank" rel="noopener">Awards</a></li>
-                                    <li><a href="https://appt.soahospitals.com/" target="_blank" rel="noopener">Appointment</a></li>
+                                    <li><a href="<?php echo sum_contact_e('appointment_url'); ?>"<?php echo sum_appointment_link_attrs(); ?>>Appointment</a></li>
                                 </ul>
                             </div>
                         </div>

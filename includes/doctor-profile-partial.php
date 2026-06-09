@@ -168,7 +168,7 @@ function sum_render_doctor_profile(array $doc, string $mode = 'page'): void
 
                     <div class="sum-doctor-profile__actions">
 
-                        <a href="https://appt.soahospitals.com/" class="sum-doctor-profile__btn sum-doctor-profile__btn--primary" target="_blank" rel="noopener">
+                        <a href="<?php echo htmlspecialchars(sum_appointment_url($dept !== '' ? ['service' => $dept] : []), ENT_QUOTES, 'UTF-8'); ?>" class="sum-doctor-profile__btn sum-doctor-profile__btn--primary"<?php echo sum_appointment_link_attrs(); ?>>
 
                             <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Appointment
 
@@ -296,7 +296,7 @@ function sum_render_doctor_profile(array $doc, string $mode = 'page'): void
 
                         <p>Schedule an appointment online or call our helpline for assistance.</p>
 
-                        <a href="https://appt.soahospitals.com/" class="sum-doctor-profile__cta-btn" target="_blank" rel="noopener">
+                        <a href="<?php echo htmlspecialchars(sum_appointment_url($dept !== '' ? ['service' => $dept] : []), ENT_QUOTES, 'UTF-8'); ?>" class="sum-doctor-profile__cta-btn"<?php echo sum_appointment_link_attrs(); ?>>
 
                             <i class="fas fa-calendar-check" aria-hidden="true"></i> Book online
 

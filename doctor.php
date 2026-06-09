@@ -125,6 +125,7 @@ include __DIR__ . '/includes/header.php';
 
 <script>
 window.sumDoctorsById = <?php echo json_encode($sumDoctorsById, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+window.sumAppointmentUrl = <?php echo json_encode(sum_contact_val('appointment_url'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 </script>
 <script src="assets/js/doctor-profile-modal.js"></script>
 <script>

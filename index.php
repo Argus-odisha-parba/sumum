@@ -20,7 +20,7 @@ include __DIR__ . '/includes/header.php';
                         <div class="banner-sec-info one-time sum-hero-copy">
                             <h1 class="animated" data-animation-in="fadeInUp" data-delay-in="0.1">SUM Ultimate Medicare</h1>
                             <p class="animated" data-animation-in="fadeInUp" data-delay-in="0.3">“SUM Ultimate Medicare offers its patients best in class healthcare facilities addressing the capacity, safety, quality and wait-time issues becoming the first of its kind in the state.”</p>
-                            <a href="https://appt.soahospitals.com/" class="btn-style8 v8" target="_blank" rel="noopener" data-animation-in="fadeInUp" data-delay-in="0.5">GET AN APPOINTMENT!</a>
+                            <a href="<?php echo htmlspecialchars(sum_appointment_url(), ENT_QUOTES, 'UTF-8'); ?>" class="btn-style8 v8"<?php echo sum_appointment_link_attrs(); ?> data-animation-in="fadeInUp" data-delay-in="0.5">GET AN APPOINTMENT!</a>
                         </div>
                     </div>
                 </div>
@@ -244,49 +244,6 @@ include __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<section class="about-section-eight sum-about-revamp space pt-0 space-md-bottom">
-    <div class="container-style8">
-        <div class="title-area-four text-center wow fadeInUp" data-wow-delay="400ms">
-            <span class="sub-title8">SUM ULTIMATE MEDICARE</span>
-            <h2>The Ultimate Healthcare Destination <br> For Your Family</h2>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-7 col-md-12 col-sm-12">
-                <div class="sum-about-media sum-about-media--single">
-                    <figure class="sum-about-media__img sum-about-media__img--full">
-                        <img src="assets/img/about/mission-vision-left.png" alt="SUM Ultimate Medicare vision collage">
-                    </figure>
-                    <div class="sum-about-vision-card">
-                        <div class="sum-about-vision-card__icon">
-                            <img src="assets/img/about/about8-3.svg" alt="">
-                        </div>
-                        <div>
-                            <h6>VISION</h6>
-                            <p><?php echo htmlspecialchars($visionText, ENT_QUOTES, 'UTF-8'); ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12 col-sm-12">
-                <article class="about-content-eight sum-about-content-card">
-                    <p class="lead mb-3">With a robust presence across the healthcare ecosystem, SUM Ultimate Medicare is a multi-super specialty quaternary care hospital committed to providing medical excellence across the spectrum of medical and surgical interventions, along with a comprehensive mix of follow-up services.</p>
-                    <p class="mb-4">We provide an atmosphere of healing with state-of-the-art healthcare facilities while integrating clinical education and research for advanced care.</p>
-
-                    <div class="sum-about-mission-box">
-                        <div class="icon-box"><img src="assets/img/about/about8-3.svg" alt=""></div>
-                        <div class="content-box">
-                            <span class="h6 d-block mb-2">MISSION</span>
-                            <p class="mb-0"><?php echo htmlspecialchars($missionText, ENT_QUOTES, 'UTF-8'); ?></p>
-                        </div>
-                    </div>
-
-                    <a href="about.php" class="btn-style8 v9 d-inline-block mb-1">Learn More</a>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-
 <div class="brand-section-six">
     <div class="container">
         <div class="brand-slider text-center vs-carousel" data-slide-show="5" data-lg-slide-show="4" data-md-slide-show="3" data-sm-slide-show="2" data-xs-slide-show="1">
@@ -399,60 +356,10 @@ include __DIR__ . '/includes/header.php';
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12" id="book-appointment">
                 <?php
-                    $bookStatus = $_GET['booked'] ?? '';
-                    if ($bookStatus === 'success'):
+                $appointmentReturnTo = 'index.php';
+                $appointmentFormIdPrefix = 'sumHomeAppt';
+                include __DIR__ . '/includes/appointment-form-partial.php';
                 ?>
-                    <div class="sum-appointment-alert sum-appointment-alert--success" role="status">Thank you! Your appointment request has been submitted. Our team will contact you shortly.</div>
-                <?php elseif ($bookStatus === 'error'): ?>
-                    <div class="sum-appointment-alert sum-appointment-alert--error" role="alert">Please fill in all required fields correctly and try again.</div>
-                <?php endif; ?>
-                <form action="appointment-submit.php" method="post" class="form-wrap4">
-                    <div class="testi-form-title">
-                        <div class="icon-box"><img src="assets/img/testimonial/testi8-1.svg" alt=""></div>
-                        <div class="content-box">
-                            <h4 class="title">Book An Appointment</h4>
-                            <span>Please Call Us To Ensure</span>
-                        </div>
-                    </div>
-                    <div class="form-box-three">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-6 form-group wow fadeInUp" data-wow-delay="400ms">
-                                <label class="visually-hidden" for="sumApptService">Type of Service</label>
-                                <select class="form-select" id="sumApptService" name="service" required>
-                                    <option value="" hidden disabled selected>Type of Service</option>
-                                    <?php foreach ($departmentItems as $dept): ?>
-                                        <option value="<?php echo htmlspecialchars($dept, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($dept, ENT_QUOTES, 'UTF-8'); ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-lg-6 col-md-6 form-group wow fadeInUp" data-wow-delay="400ms">
-                                <label class="visually-hidden" for="sumApptDate">Date</label>
-                                <input type="text" class="date-pick form-control" id="sumApptDate" name="appointment_date" placeholder="Date" required autocomplete="off">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-lg-6 col-md-6 form-group wow fadeInUp" data-wow-delay="500ms">
-                                <label class="visually-hidden" for="sumApptTime">Time</label>
-                                <input type="text" class="time-pick form-control" id="sumApptTime" name="appointment_time" placeholder="Time" required autocomplete="off">
-                                <i class="fa fa-clock" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-lg-6 col-md-6 form-group wow fadeInUp" data-wow-delay="600ms">
-                                <label class="visually-hidden" for="sumApptName">Name</label>
-                                <input type="text" class="form-control" id="sumApptName" name="name" placeholder="Name" required>
-                            </div>
-                            <div class="col-lg-6 col-md-6 form-group wow fadeInUp" data-wow-delay="600ms">
-                                <label class="visually-hidden" for="sumApptEmail">Email</label>
-                                <input type="email" class="form-control" id="sumApptEmail" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="col-lg-12 col-md-6 form-group wow fadeInUp" data-wow-delay="600ms">
-                                <label class="visually-hidden" for="sumApptPhone">Phone No</label>
-                                <input type="tel" class="form-control" id="sumApptPhone" name="phone" placeholder="Phone No" required>
-                            </div>
-                            <div class="col-xl-6 col-lg-7 col-md-6 col-sm-6 form-group mb-0 wow fadeInUp" data-wow-delay="600ms">
-                                <button type="submit" class="btn-style8 v10">Make Appointment</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

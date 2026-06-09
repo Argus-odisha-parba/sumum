@@ -3,8 +3,14 @@
 require_once __DIR__ . '/includes/data.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
+    header('Location: appointment.php');
     exit;
+}
+
+$allowedReturn = ['appointment.php', 'index.php'];
+$returnTo = trim($_POST['return_to'] ?? 'appointment.php');
+if (!in_array($returnTo, $allowedReturn, true)) {
+    $returnTo = 'appointment.php';
 }
 
 $service = trim($_POST['service'] ?? '');
@@ -35,7 +41,7 @@ if ($phone === '') {
 }
 
 if (!empty($errors)) {
-    header('Location: index.php?booked=error#book-appointment');
+    header('Location: ' . $returnTo . '?booked=error#book-appointment');
     exit;
 }
 
@@ -49,5 +55,5 @@ $saved = sum_appointments_add([
     'status' => 'new',
 ]);
 
-header('Location: index.php?' . ($saved ? 'booked=success' : 'booked=error') . '#book-appointment');
+header('Location: ' . $returnTo . '?' . ($saved ? 'booked=success' : 'booked=error') . '#book-appointment');
 exit;

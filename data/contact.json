@@ -13,5 +13,5 @@
     "hours_summary": "Mon – Sun 08:00 – 18:00",
     "hours_compact": "08:00 – 18:00",
     "contact_intro": "Reach us for appointments, support, and emergency assistance.",
-    "appointment_url": "https://appt.soahospitals.com/"
+    "appointment_url": "appointment.php"
 }

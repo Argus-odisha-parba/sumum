@@ -88,7 +88,7 @@ include __DIR__ . '/includes/header.php';
             </div>
         <?php endif; ?>
         <div class="mt-4">
-            <a href="https://appt.soahospitals.com/" class="btn-style8 v8" target="_blank" rel="noopener">Book Appointment</a>
+            <a href="<?php echo htmlspecialchars(sum_appointment_url(['service' => $department['name']]), ENT_QUOTES, 'UTF-8'); ?>" class="btn-style8 v8"<?php echo sum_appointment_link_attrs(); ?>>Book Appointment</a>
             <a href="department.php" class="btn-style8 v9 ms-2">All Departments</a>
         </div>
     </div>

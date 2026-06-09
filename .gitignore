@@ -1,0 +1,12 @@
+# Secrets & environment-specific config (create on server)
+data/admin-config.php
+data/db-config.php
+
+# User-generated / runtime data
+data/appointments.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

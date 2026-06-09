@@ -69,7 +69,7 @@ if (!isset($bodyClass)) {
                 </ul>
                 <div class="sum-mobile-nav-actions">
                     <a href="tel:<?php echo sum_contact_e('epabx_tel'); ?>" class="sum-mobile-nav-actions__call"><i class="fas fa-phone" aria-hidden="true"></i> <?php echo sum_contact_e('epabx_display'); ?></a>
-                    <a href="https://appt.soahospitals.com/" class="sum-mobile-nav-actions__book" target="_blank" rel="noopener">Book Appointment</a>
+                    <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="sum-mobile-nav-actions__book"<?php echo sum_appointment_link_attrs(); ?>>Book Appointment</a>
                     <a href="https://appt.soahospitals.com/" class="sum-mobile-nav-actions__login" target="_blank" rel="noopener"><i class="fas fa-user" aria-hidden="true"></i> Login &amp; Register</a>
                 </div>
             </div>
@@ -212,11 +212,11 @@ if (!isset($bodyClass)) {
                             </nav>
 
                             <div class="sum-header-tools d-lg-none">
-                                <a href="https://appt.soahospitals.com/" class="sum-header-tool sum-header-tool--book" target="_blank" rel="noopener">Book</a>
+                                <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="sum-header-tool sum-header-tool--book"<?php echo sum_appointment_link_attrs(); ?>>Book</a>
                             </div>
 
                             <div class="sum-header-actions header-btn-eight sum-ref-header-actions d-none d-lg-flex">
-                                <a href="https://appt.soahospitals.com/" class="btn-style8 book sum-book-cta sum-book-cta--premium" target="_blank" rel="noopener">
+                                <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="btn-style8 book sum-book-cta sum-book-cta--premium"<?php echo sum_appointment_link_attrs(); ?>>
                                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                                     <span>Book Appointment</span>
                                 </a>
@@ -236,7 +236,7 @@ if (!isset($bodyClass)) {
             <span class="sum-sticky-actions__icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></span>
             <span class="sum-sticky-actions__label">Emergency</span>
         </a>
-        <a class="sum-sticky-actions__btn sum-sticky-actions__btn--book" href="https://appt.soahospitals.com/" target="_blank" rel="noopener" aria-label="Book an appointment">
+        <a class="sum-sticky-actions__btn sum-sticky-actions__btn--book" href="<?php echo sum_contact_e('appointment_url'); ?>"<?php echo sum_appointment_link_attrs(); ?> aria-label="Book an appointment">
             <span class="sum-sticky-actions__icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></span>
             <span class="sum-sticky-actions__label">Book Appointment</span>
         </a>

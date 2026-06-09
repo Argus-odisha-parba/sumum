@@ -101,7 +101,7 @@ $pageTitle = $adminPageTitle;
                     <h2>Book An Appointment — form submissions</h2>
                     <p class="sum-admin-panel__hint mb-0">All fields from the homepage form: type of service, date, time, name, email, and phone number.</p>
                 </div>
-                <a href="../index.php#book-appointment" class="sum-admin-btn sum-admin-btn--ghost" target="_blank" rel="noopener">View form</a>
+                <a href="../appointment.php" class="sum-admin-btn sum-admin-btn--ghost" target="_blank" rel="noopener">View form</a>
             </div>
 
             <div class="sum-admin-filter-tabs">

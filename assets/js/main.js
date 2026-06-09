@@ -1042,8 +1042,8 @@ if($dataV >= 51){
       slidesToShow: 4,
       slidesToScroll: 1,
       pauseOnHover: true,
-      prevArrow: '<button type="button" class="sum-dept-slider-arrow prev" aria-label="Previous departments"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>',
-      nextArrow: '<button type="button" class="sum-dept-slider-arrow next" aria-label="Next departments"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>',
+      prevArrow: '<button type="button" class="slick-prev sum-dept-slider-arrow" aria-label="Previous departments"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>',
+      nextArrow: '<button type="button" class="slick-next sum-dept-slider-arrow" aria-label="Next departments"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>',
       appendArrows: '#sumDeptSliderNav',
       responsive: [
         { breakpoint: 1400, settings: { slidesToShow: 3 } },

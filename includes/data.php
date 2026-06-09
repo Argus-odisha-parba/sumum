@@ -12,6 +12,7 @@ require_once __DIR__ . '/departments-store.php';
 require_once __DIR__ . '/gallery-store.php';
 require_once __DIR__ . '/contact-store.php';
 require_once __DIR__ . '/appointments-store.php';
+require_once __DIR__ . '/db-config-store.php';
 
 $contactDetails = sum_contact_load();
 

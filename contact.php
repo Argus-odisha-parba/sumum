@@ -37,7 +37,7 @@ include __DIR__ . '/includes/header.php';
                             <li class="mb-2"><strong>Saturday:</strong> <?php echo sum_contact_e('hours_saturday'); ?></li>
                             <li class="mb-2"><strong>Sunday:</strong> <?php echo sum_contact_e('hours_sunday'); ?></li>
                         </ul>
-                        <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="btn btn-primary" target="_blank" rel="noopener">
+                        <a href="<?php echo sum_contact_e('appointment_url'); ?>" class="btn btn-primary"<?php echo sum_appointment_link_attrs(); ?>>
                             <i class="fas fa-calendar-check" aria-hidden="true"></i> Book appointment
                         </a>
                     </div>

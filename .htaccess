@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Uncomment on production to force HTTPS
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Old URL: doctor-profile.php?id=dr-name → /doctors/dr-name
     RewriteCond %{THE_REQUEST} \s[^\s]*doctor-profile\.php\?id=([a-zA-Z0-9\-]+) [NC]
     RewriteRule ^doctor-profile\.php$ doctors/%1? [R=301,L]

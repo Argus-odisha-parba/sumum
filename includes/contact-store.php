@@ -22,8 +22,31 @@ function sum_contact_defaults(): array
         'hours_summary' => 'Mon – Sun 08:00 – 18:00',
         'hours_compact' => '08:00 – 18:00',
         'contact_intro' => 'Reach us for appointments, support, and emergency assistance.',
-        'appointment_url' => 'https://appt.soahospitals.com/',
+        'appointment_url' => 'appointment.php',
     ];
+}
+
+function sum_appointment_url(array $query = []): string
+{
+    $url = sum_contact_val('appointment_url');
+    if ($url === '') {
+        $url = 'appointment.php';
+    }
+    if (!empty($query)) {
+        $url .= (strpos($url, '?') !== false ? '&' : '?') . http_build_query($query);
+    }
+    return $url;
+}
+
+function sum_appointment_is_external(): bool
+{
+    $url = sum_contact_val('appointment_url');
+    return (bool) preg_match('#^https?://#i', $url);
+}
+
+function sum_appointment_link_attrs(): string
+{
+    return sum_appointment_is_external() ? ' target="_blank" rel="noopener"' : '';
 }
 
 function sum_contact_normalize(array $row): array

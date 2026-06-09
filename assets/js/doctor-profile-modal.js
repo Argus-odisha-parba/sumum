@@ -63,6 +63,10 @@
     var deptSlug = doc.departmentSlug || '';
 
     var deptUrl = 'department-detail.php?dept=' + encodeURIComponent(deptSlug);
+    var apptBase = window.sumAppointmentUrl || 'appointment.php';
+    var apptUrl = doc.department
+      ? apptBase + (apptBase.indexOf('?') >= 0 ? '&' : '?') + 'service=' + encodeURIComponent(doc.department)
+      : apptBase;
 
     var bio = doc.bio || '';
 
@@ -80,7 +84,7 @@
               '<h2 id="sumDoctorModalTitle" class="sum-doctor-profile__name">' + escapeHtml(doc.name) + '</h2>' +
               (doc.qualification ? '<p class="sum-doctor-profile__qual"><i class="fas fa-graduation-cap" aria-hidden="true"></i> ' + escapeHtml(doc.qualification) + '</p>' : '') +
               '<div class="sum-doctor-profile__actions">' +
-                '<a href="https://appt.soahospitals.com/" class="sum-doctor-profile__btn sum-doctor-profile__btn--primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>' +
+                '<a href="' + escapeHtml(apptUrl) + '" class="sum-doctor-profile__btn sum-doctor-profile__btn--primary"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>' +
                 '<a href="tel:+916743500500" class="sum-doctor-profile__btn sum-doctor-profile__btn--outline"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Hospital</a>' +
               '</div>' +
             '</div>' +

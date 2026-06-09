@@ -76,7 +76,8 @@ $pageTitle = $adminPageTitle;
 
                 <div class="sum-admin-field">
                     <label for="appointment_url">Appointment URL</label>
-                    <input type="url" id="appointment_url" name="appointment_url" value="<?php echo htmlspecialchars($contact['appointment_url'], ENT_QUOTES, 'UTF-8'); ?>">
+                    <input type="text" id="appointment_url" name="appointment_url" value="<?php echo htmlspecialchars($contact['appointment_url'], ENT_QUOTES, 'UTF-8'); ?>" placeholder="appointment.php or https://...">
+                    <p class="sum-admin-field-hint">Use <code>appointment.php</code> for the on-site booking form, or an external URL if needed.</p>
                 </div>
 
                 <div class="sum-admin-field">

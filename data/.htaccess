@@ -1,3 +1,2 @@
-<Files "admin-config.php">
-    Require all denied
-</Files>
+# Block all direct web access to data files (PHP reads them from disk).
+Require all denied

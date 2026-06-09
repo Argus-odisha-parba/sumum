@@ -1,6 +1,6 @@
 <?php
 /** @var string $adminPageTitle */
-/** @var string $adminActiveNav dashboard|doctors|departments|gallery|contact|appointments */
+/** @var string $adminActiveNav dashboard|doctors|departments|gallery|contact|appointments|database */
 $adminPageTitle = $adminPageTitle ?? 'Dashboard';
 $adminActiveNav = $adminActiveNav ?? '';
 $adminNewAppointments = 0;
@@ -27,6 +27,7 @@ if (function_exists('sum_appointments_count_by_status')) {
         <a href="appointments.php" class="<?php echo $adminActiveNav === 'appointments' ? 'is-active' : ''; ?>">
             Appointments<?php if ($adminNewAppointments > 0): ?><span class="sum-admin-nav-badge"><?php echo (int) $adminNewAppointments; ?></span><?php endif; ?>
         </a>
+        <a href="database.php" class="<?php echo $adminActiveNav === 'database' ? 'is-active' : ''; ?>">Database</a>
         <a href="../department.php" target="_blank" rel="noopener">View site</a>
         <a href="logout.php">Logout</a>
     </nav>
